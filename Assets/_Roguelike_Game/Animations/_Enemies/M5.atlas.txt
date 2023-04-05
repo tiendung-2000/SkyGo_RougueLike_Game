@@ -1,0 +1,153 @@
+
+M5.png
+size: 103,267
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Bomb/Mons1
+  rotate: false
+  xy: 2, 2
+  size: 19, 12
+  orig: 64, 64
+  offset: 23, 16
+  index: -1
+Bomb/Mons2
+  rotate: false
+  xy: 23, 4
+  size: 21, 10
+  orig: 64, 64
+  offset: 22, 16
+  index: -1
+Bomb/Mons3
+  rotate: false
+  xy: 23, 4
+  size: 21, 10
+  orig: 64, 64
+  offset: 22, 16
+  index: -1
+Bomb/Mons4
+  rotate: false
+  xy: 74, 99
+  size: 17, 15
+  orig: 64, 64
+  offset: 24, 16
+  index: -1
+Bomb/Mons5
+  rotate: false
+  xy: 74, 99
+  size: 17, 15
+  orig: 64, 64
+  offset: 24, 16
+  index: -1
+Die/Mons1
+  rotate: true
+  xy: 73, 6
+  size: 28, 26
+  orig: 64, 64
+  offset: 18, 16
+  index: -1
+Move/Mons1
+  rotate: true
+  xy: 73, 6
+  size: 28, 26
+  orig: 64, 64
+  offset: 18, 16
+  index: -1
+Die/Mons10
+  rotate: true
+  xy: 2, 78
+  size: 58, 37
+  orig: 64, 64
+  offset: 3, 16
+  index: -1
+Die/Mons2
+  rotate: true
+  xy: 74, 116
+  size: 43, 26
+  orig: 64, 64
+  offset: 11, 16
+  index: -1
+Die/Mons11
+  rotate: true
+  xy: 74, 116
+  size: 43, 26
+  orig: 64, 64
+  offset: 11, 16
+  index: -1
+Die/Mons3
+  rotate: true
+  xy: 73, 220
+  size: 45, 28
+  orig: 64, 64
+  offset: 10, 16
+  index: -1
+Die/Mons4
+  rotate: true
+  xy: 39, 151
+  size: 55, 30
+  orig: 64, 64
+  offset: 6, 16
+  index: -1
+Die/Mons5
+  rotate: true
+  xy: 39, 208
+  size: 57, 32
+  orig: 64, 64
+  offset: 5, 16
+  index: -1
+Die/Mons6
+  rotate: true
+  xy: 38, 16
+  size: 60, 33
+  orig: 64, 64
+  offset: 2, 16
+  index: -1
+Die/Mons7
+  rotate: true
+  xy: 2, 202
+  size: 63, 35
+  orig: 64, 64
+  offset: 0, 16
+  index: -1
+Die/Mons8
+  rotate: true
+  xy: 2, 16
+  size: 60, 34
+  orig: 64, 64
+  offset: 4, 16
+  index: -1
+Die/Mons9
+  rotate: true
+  xy: 2, 138
+  size: 62, 35
+  orig: 64, 64
+  offset: 2, 16
+  index: -1
+Move/Mons2
+  rotate: true
+  xy: 73, 36
+  size: 40, 19
+  orig: 64, 64
+  offset: 11, 16
+  index: -1
+Move/Mons3
+  rotate: false
+  xy: 41, 78
+  size: 43, 19
+  orig: 64, 64
+  offset: 10, 16
+  index: -1
+Move/Mons4
+  rotate: true
+  xy: 71, 161
+  size: 45, 30
+  orig: 64, 64
+  offset: 9, 16
+  index: -1
+Move/Mons5
+  rotate: true
+  xy: 41, 99
+  size: 50, 31
+  orig: 64, 64
+  offset: 7, 16
+  index: -1

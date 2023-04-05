@@ -1,0 +1,213 @@
+using DG.Tweening;
+using Spine.Unity;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class TheDestroyerBoss : MonoBehaviour
+{
+    public static TheDestroyerBoss Ins;
+
+    BossController bossController;
+
+    public SkeletonAnimation ske;
+
+    [Header("Moving")]
+    public bool shouldMove;
+    public float moveSpeed;
+    public Rigidbody2D theRB;
+    private Vector2 moveDirection;
+
+    [Header("Shooting")]
+    public float xAngle;
+    public float yAngle;
+
+    public Transform[] shotPointsFirst;
+    public Transform[] shotPointsSecond;
+    public Transform[] shotPointsFour;
+
+    public GameObject bulletFirst;
+    public GameObject bulletSecond;
+    public GameObject bulletFour;
+
+    public float fireRateFirst;
+    public float fireRateSecond;
+    public float fireRateFour;
+
+    public float shootCounter;
+
+    public bool phaseFirst = false;
+    public bool phaseSecond = false;
+    public bool phaseFour = false;
+    private void Awake()
+    {
+        if (Ins == null)
+        {
+            Ins = this;
+        }
+    }
+
+    private void Start()
+    {
+        bossController = GetComponent<BossController>();
+
+        ske.AnimationState.Complete += AnimationState_Complete;
+
+        if (shouldMove == true)
+        {
+            ske.AnimationState.SetAnimation(0, "Move", false);
+        }
+    }
+    private void Update()
+    {
+        shootCounter -= Time.deltaTime;
+
+        if (shouldMove == true)
+        {
+            Moving();
+        }
+
+        if (phaseFirst)
+        {
+            PhaseFirst();
+        }
+
+        if (phaseSecond)
+        {
+            PhaseSecond();
+        }
+
+        if (phaseFour)
+        {
+            PhaseFour();
+        }
+    }
+
+    private void AnimationState_Complete(Spine.TrackEntry trackEntry)
+    {
+        switch (trackEntry.Animation.Name)
+        {
+            case AnimationKeys.B1_MOVE:
+                shouldMove = false;
+                ske.AnimationState.SetAnimation(0, AnimationKeys.B1_SKILL_1_READY, false);
+                break;
+
+            //ban 10 vien dan
+            case AnimationKeys.B1_SKILL_1_READY:
+                ske.AnimationState.SetAnimation(0, AnimationKeys.B1_SKILL_1_ATTACK, false);
+                phaseFirst = true;
+                break;
+
+            case AnimationKeys.B1_SKILL_1_ATTACK:
+                phaseFirst = false;
+                ske.AnimationState.SetAnimation(0, AnimationKeys.B1_SKILL_2, false);
+                phaseSecond = true;
+                break;
+
+            case AnimationKeys.B1_SKILL_2:
+                phaseSecond = false;
+                ske.AnimationState.SetAnimation(0, AnimationKeys.B1_SKILL_3_READY, false);
+                break;
+
+            case AnimationKeys.B1_SKILL_3_READY:
+                Dash();
+                ske.AnimationState.SetAnimation(0, AnimationKeys.B1_SKILL_3_ATTACK, false);
+                break;
+
+            case AnimationKeys.B1_SKILL_3_ATTACK:
+                ske.AnimationState.SetAnimation(0, AnimationKeys.B1_SKILL_4_READY, false);
+                break;
+
+            case AnimationKeys.B1_SKILL_4_READY:
+                ske.AnimationState.SetAnimation(0, AnimationKeys.B1_SKILL_4_ATTACK, false);
+                phaseFour = true;
+                break;
+
+            case AnimationKeys.B1_SKILL_4_ATTACK:
+                phaseFour = false;
+                ske.AnimationState.SetAnimation(0, AnimationKeys.B1_MOVE, false);
+                shouldMove = true;
+                break;
+
+            case AnimationKeys.B1_DIE:
+                Destroy(gameObject);
+                break;
+
+                //default:
+                //    ske.AnimationState.SetAnimation(0, AnimationKeys.B1_MOVE, false);
+                //    break;
+        }
+    }
+
+
+    public void Moving()
+    {
+        if (bossController.currentHealth > 0 && shouldMove == true)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, PlayerController.Ins.transform.position, moveSpeed * Time.deltaTime);
+            moveDirection.Normalize();
+        }
+    }
+    public void PhaseFirst()
+    {
+        if (shootCounter <= 0)
+        {
+            shouldMove = false;
+
+            shootCounter = fireRateFirst;
+
+            foreach (Transform point in shotPointsFirst)
+            {
+                Instantiate(bulletFirst, point.position, point.rotation);
+            }
+        }
+    }
+    public void PhaseSecond()
+    {
+        if (shootCounter <= 0)
+        {
+            shouldMove = false;
+
+            shootCounter = fireRateSecond;
+
+            foreach (Transform point in shotPointsSecond)
+            {
+                var newBullet = Instantiate(bulletSecond, point.position, point.rotation);
+                //newBullet.transform.Rotate(0f, 0f, Random.Range(-xAngle, yAngle));
+            }
+        }
+    }
+    public void Dash()
+    {
+        var pos = PlayerController.Ins.transform.localPosition;
+        transform.DOMove(pos, .6f);
+    }
+    public void PhaseFour()
+    {
+        if (shootCounter <= 0)
+        {
+            shouldMove = false;
+
+            shootCounter = fireRateFour;
+
+            foreach (Transform point in shotPointsFour)
+            {
+                Instantiate(bulletFour, point.position, point.rotation);
+            }
+        }
+    }
+    //public void PhaseFive()
+    //{
+    //    if (shootCounter <= 0)
+    //    {
+    //        shouldMove = false;
+
+    //        shootCounter = fireRateFive;
+
+    //        foreach (Transform t in shotPointsFive)
+    //        {
+    //            SmartPool.Ins.Spawn(bulletFive, t.position, t.rotation);
+    //        }
+    //    }
+    //}
+}
