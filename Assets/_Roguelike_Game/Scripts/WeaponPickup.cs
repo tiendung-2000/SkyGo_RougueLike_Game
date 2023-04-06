@@ -38,6 +38,7 @@ public class WeaponPickup : MonoBehaviour
                     hasWeapon = true;
 
                     //tang damage neu nhat vu khi giong nhau
+                    theWeapon.arrow.damageToGive++;
                 }
             }
 

@@ -605,6 +605,7 @@ MonoBehaviour:
   weaponName: Normal Bow
   itemCost: 15
   weaponShopSprite: {fileID: 21300000, guid: 1b0d9d6f582e09d428ae6874e0b63016, type: 3}
+  arrow: {fileID: 1128771746439910431, guid: 04178e4880702b546b1a353e64ae5307, type: 3}
   ArrowPrefab: {fileID: 1128771746439911396, guid: 04178e4880702b546b1a353e64ae5307,
     type: 3}
   ArrowGFX: {fileID: 3937074314958344029}

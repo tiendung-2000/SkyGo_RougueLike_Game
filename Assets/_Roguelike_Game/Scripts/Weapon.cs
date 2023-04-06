@@ -17,6 +17,7 @@ public class Weapon : MonoBehaviour
 
     public int itemCost;
     public Sprite weaponShopSprite;
+    public PlayerBullet arrow;
 
     //=========================================//
     [SerializeField] GameObject ArrowPrefab; //bulet
