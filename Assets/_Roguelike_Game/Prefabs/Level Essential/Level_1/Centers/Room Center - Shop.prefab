@@ -237,13 +237,13 @@ MonoBehaviour:
   isWeapon: 1
   itemCost: 5
   healthUpgradeAmount: 0
-  potentialGuns:
+  potentialWeapon:
   - {fileID: 2081126821913419177, guid: c50308c6abc4d034b81b6541347a1765, type: 3}
   - {fileID: 2081126821913419177, guid: b126057d2e8a3f24a9feaf22b255e50c, type: 3}
   - {fileID: 2081126821913419177, guid: 1ed80fb497f23d743a04fadd1df3edf6, type: 3}
   - {fileID: 2081126821913419177, guid: 171f6a76cb818b6478f6eaa4b88ff697, type: 3}
   - {fileID: 2081126821913419177, guid: 85652e98ae2266a498052087829372f5, type: 3}
-  gunSprite: {fileID: 220299621}
+  weaponSprite: {fileID: 220299621}
   inforText: {fileID: 1930383330}
 --- !u!1 &522320906
 GameObject:
@@ -596,7 +596,8 @@ SpriteRenderer:
   m_SortingLayerID: 1054729335
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 948013957827415202, guid: 6160e37126a84274586e2f5778ddd2c6, type: 3}
+  m_Sprite: {fileID: -2251538127485611388, guid: 6160e37126a84274586e2f5778ddd2c6,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -651,8 +652,8 @@ MonoBehaviour:
   isWeapon: 0
   itemCost: 5
   healthUpgradeAmount: 0
-  potentialGuns: []
-  gunSprite: {fileID: 0}
+  potentialWeapon: []
+  weaponSprite: {fileID: 0}
   inforText: {fileID: 0}
 --- !u!1 &2830904208713076576
 GameObject:
@@ -1012,7 +1013,8 @@ SpriteRenderer:
   m_SortingLayerID: 1054729335
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 948013957827415202, guid: 6160e37126a84274586e2f5778ddd2c6, type: 3}
+  m_Sprite: {fileID: -7663377620997365329, guid: 6160e37126a84274586e2f5778ddd2c6,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1067,8 +1069,8 @@ MonoBehaviour:
   isWeapon: 0
   itemCost: 15
   healthUpgradeAmount: 2
-  potentialGuns: []
-  gunSprite: {fileID: 0}
+  potentialWeapon: []
+  weaponSprite: {fileID: 0}
   inforText: {fileID: 0}
 --- !u!1 &2830904209170737445
 GameObject:

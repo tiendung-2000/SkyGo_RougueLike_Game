@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 moveInput;
 
     public Rigidbody2D theRB;
-    public Transform gunArm;
+    public Transform playerHand;
     //private Camera theCam;
     public Animator anim;
 
@@ -24,10 +24,10 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public bool canMove = true;
 
-    public List<Gun> availableGuns = new List<Gun>();
+    public List<Weapon> availableWeapons = new List<Weapon>();
 
     [HideInInspector]
-    public int currentGun;
+    public int currentWeapon;
 
     private void Awake()
     {
@@ -61,30 +61,30 @@ public class PlayerController : MonoBehaviour
             if (mousePos.x < screenPoint.x)
             {
                 transform.localScale = new Vector3(-1f, 1f, 1f);
-                gunArm.localScale = new Vector3(-1f, -1f, 1f);
+                playerHand.localScale = new Vector3(-1f, -1f, 1f);
             }
             else
             {
                 transform.localScale = Vector3.one;
-                gunArm.localScale = Vector3.one;
+                playerHand.localScale = Vector3.one;
             }
 
             //rotate gun arm
             Vector2 offset = new Vector2(mousePos.x - screenPoint.x, mousePos.y - screenPoint.y);
             float angle = Mathf.Atan2(offset.y, offset.x) * Mathf.Rad2Deg;
-            gunArm.rotation = Quaternion.Euler(0, 0, angle);
+            playerHand.rotation = Quaternion.Euler(0, 0, angle);
 
             if (Input.GetKeyDown(KeyCode.Tab))
             {
-                if(availableGuns.Count > 0)
+                if(availableWeapons.Count > 0)
                 {
-                    currentGun++;
-                    if(currentGun >= availableGuns.Count)
+                    currentWeapon++;
+                    if(currentWeapon >= availableWeapons.Count)
                     {
-                        currentGun = 0;
+                        currentWeapon = 0;
                     }
 
-                    SwitchGun();
+                    SwitchWeapon();
                 }
                 else
                 {
@@ -138,13 +138,13 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void SwitchGun()
+    public void SwitchWeapon()
     {
-        foreach(Gun theGun in availableGuns)
+        foreach(Weapon theGun in availableWeapons)
         {
             theGun.gameObject.SetActive(false);
         }
 
-        availableGuns[currentGun].gameObject.SetActive(true);
+        availableWeapons[currentWeapon].gameObject.SetActive(true);
     }
 }

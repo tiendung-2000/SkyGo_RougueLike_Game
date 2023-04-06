@@ -15,22 +15,21 @@ public class ShopItem : MonoBehaviour
 
     public int healthUpgradeAmount;
 
-    public Gun[] potentialGuns;
-    private Gun theGun;
-    public SpriteRenderer gunSprite;
+    public Weapon[] potentialWeapon;
+    private Weapon theWeapon;
+    public SpriteRenderer weaponSprite;
     public Text inforText;
 
-    // Start is called before the first frame update
     void Start()
     {
         if (isWeapon)
         {
-            int selectedGun = Random.Range(0, potentialGuns.Length);
-            theGun = potentialGuns[selectedGun];
+            int selectedGun = Random.Range(0, potentialWeapon.Length);
+            theWeapon = potentialWeapon[selectedGun];
 
-            gunSprite.sprite = theGun.gunShopSprite;
-            inforText.text = theGun.weaponName + "\n - " + theGun.itemCost + " Gold - ";
-            itemCost = theGun.itemCost;
+            weaponSprite.sprite = theWeapon.weaponShopSprite;
+            inforText.text = theWeapon.weaponName + "\n - " + theWeapon.itemCost + " Gold - ";
+            itemCost = theWeapon.itemCost;
         }
     }
 
@@ -58,15 +57,15 @@ public class ShopItem : MonoBehaviour
 
                     if (isWeapon)
                     {
-                        Gun gunClone = Instantiate(theGun);
-                        gunClone.transform.parent = PlayerController.Ins.gunArm;
-                        gunClone.transform.position = PlayerController.Ins.gunArm.position;
+                        Weapon gunClone = Instantiate(theWeapon);
+                        gunClone.transform.parent = PlayerController.Ins.playerHand;
+                        gunClone.transform.position = PlayerController.Ins.playerHand.position;
                         gunClone.transform.localRotation = Quaternion.Euler(Vector3.zero);
                         gunClone.transform.localScale = Vector3.one;
 
-                        PlayerController.Ins.availableGuns.Add(gunClone);
-                        PlayerController.Ins.currentGun = PlayerController.Ins.availableGuns.Count - 1;
-                        PlayerController.Ins.SwitchGun();
+                        PlayerController.Ins.availableWeapons.Add(gunClone);
+                        PlayerController.Ins.currentWeapon = PlayerController.Ins.availableWeapons.Count - 1;
+                        PlayerController.Ins.SwitchWeapon();
                     }
 
                     gameObject.SetActive(false);

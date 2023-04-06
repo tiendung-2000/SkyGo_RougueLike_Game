@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1560822681252234985}
   - component: {fileID: 1560822681252234966}
   - component: {fileID: 1560822681252234967}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Bow 5 Pickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,5 +112,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3831c95fef5513543a49c9d6a7cbbbab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  theGun: {fileID: 2081126821913419177, guid: 85652e98ae2266a498052087829372f5, type: 3}
+  theWeapon: {fileID: 2081126821913419177, guid: 85652e98ae2266a498052087829372f5,
+    type: 3}
   waitToBeColleted: 0.5

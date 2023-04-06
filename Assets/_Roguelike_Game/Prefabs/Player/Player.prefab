@@ -133,7 +133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   theRB: {fileID: 8740218102257874945}
-  gunArm: {fileID: 8740218102441485213}
+  playerHand: {fileID: 8740218102441485213}
   anim: {fileID: 8740218102257874944}
   bodySR: {fileID: 4509055999092808219}
   dashSpeed: 8
@@ -142,9 +142,9 @@ MonoBehaviour:
   dashInvincibisity: 0.5
   dashCounter: 0
   canMove: 1
-  availableGuns:
+  availableWeapons:
   - {fileID: 6433718342062844644}
-  currentGun: 0
+  currentWeapon: 0
 --- !u!58 &8740218102257874946
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -158,9 +158,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.37}
+  m_Offset: {x: 0, y: -0.22080255}
   serializedVersion: 2
-  m_Radius: 0.35
+  m_Radius: 0.29256082
 --- !u!50 &8740218102257874945
 Rigidbody2D:
   serializedVersion: 4
@@ -277,7 +277,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8740218102441485212}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.037, y: 0.337, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3348315651263782869}
@@ -360,7 +360,7 @@ PrefabInstance:
     - target: {fileID: 7772955911341516952, guid: c50308c6abc4d034b81b6541347a1765,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7772955911341516952, guid: c50308c6abc4d034b81b6541347a1765,
         type: 3}

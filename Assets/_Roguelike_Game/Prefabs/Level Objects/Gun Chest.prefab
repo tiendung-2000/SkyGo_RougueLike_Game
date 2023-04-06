@@ -329,8 +329,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   potentialGuns:
   - {fileID: 1560822681252234964, guid: 3daac3c0ce2c8eb4ab4695c9696e43f7, type: 3}
-  - {fileID: 4770880160192125795, guid: 70e9d1428f783fc45a32d2a077a1b911, type: 3}
-  - {fileID: 1306587073809709439, guid: 4a2682d917ffa0f41bc94257469c5ad5, type: 3}
+  - {fileID: 1560822681252234964, guid: ceca3920dda06784d8c0883ccf7b167f, type: 3}
+  - {fileID: 1560822681252234964, guid: 207d43555144a1b42a7a126cd86d00de, type: 3}
+  - {fileID: 1560822681252234964, guid: 5c46dbfeb11812145855d19b3b385f3a, type: 3}
+  - {fileID: 1560822681252234964, guid: 5d79933c9c265c248aac4d6d54de746d, type: 3}
   theSR: {fileID: 2464433735744878721}
   chestOpen: {fileID: 444756885432138965, guid: 815f98a145a4ae14d897a7f431477ea9,
     type: 3}

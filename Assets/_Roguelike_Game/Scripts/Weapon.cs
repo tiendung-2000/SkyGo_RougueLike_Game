@@ -4,7 +4,7 @@ using UnityEditor.Playables;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Gun : MonoBehaviour
+public class Weapon : MonoBehaviour
 {
     //public PlayerBullet playerBullet;
 
@@ -16,7 +16,7 @@ public class Gun : MonoBehaviour
     public string weaponName;
 
     public int itemCost;
-    public Sprite gunShopSprite;
+    public Sprite weaponShopSprite;
 
     //=========================================//
     [SerializeField] GameObject ArrowPrefab; //bulet
