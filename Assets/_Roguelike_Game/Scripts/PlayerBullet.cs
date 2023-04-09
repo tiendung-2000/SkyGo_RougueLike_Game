@@ -11,9 +11,9 @@ public class PlayerBullet : MonoBehaviour
 
     public int damageToGive = 0;
 
-    public int lowDamage = 10;
-    public int mediumDamage = 20;
-    public int highDamage = 30;
+    //public int lowDamage = 10;
+    //public int mediumDamage = 20;
+    //public int highDamage = 30;
 
     void Update()
     {

@@ -1,8 +1,4 @@
-using API.UI;
-using DG.Tweening;
 using Spine.Unity;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BossController : MonoBehaviour
@@ -12,13 +8,10 @@ public class BossController : MonoBehaviour
 
     [Header("Boss")]
     public float currentHealth;
-    //public GameObject deathEffect;
     public GameObject hitEffect;
+    public GameObject levelExit;
 
-    //public BossHubUI bossHubUI;
-    //public GameObject levelExit;
-
-    public bool playerOnZone = false;
+    //public bool playerOnZone = false;
 
     private void Awake()
     {
@@ -31,13 +24,13 @@ public class BossController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerOnZone = false;
+        UIController.Ins.bossHub.SetActive(true);
     }
 
     private void OnEnable()
     {
-        UIController.instance.bossHealthBar.maxValue = currentHealth;
-        UIController.instance.bossHealthBar.value = currentHealth;
+        UIController.Ins.bossHealthBar.maxValue = currentHealth;
+        UIController.Ins.bossHealthBar.value = currentHealth;
     }
 
     public void TakeDamage(int damageAmount)
@@ -47,8 +40,10 @@ public class BossController : MonoBehaviour
         if (currentHealth <= 0)
         {
             ske.AnimationState.SetAnimation(0, AnimationKeys.DIE, false);
-            //CanvasManager.Ins.CloseUI(UIName.BossHubUI);
+
+            levelExit.SetActive(true);
+            UIController.Ins.bossHub.SetActive(false);
         }
-        UIController.instance.bossHealthBar.value = currentHealth;
+        UIController.Ins.bossHealthBar.value = currentHealth;
     }
 }

@@ -8,12 +8,13 @@ using TMPro;
 
 public class UIController : BaseUIMenu
 {
-    public static UIController instance;
+    public static UIController Ins;
 
     public Slider healthSlider;
     public TMP_Text healthText, cointText;
 
     public GameObject deathScreen;
+    public GameObject bossHub;
 
     public Image fadeScreen;
     public float fadeSpeed;
@@ -23,29 +24,21 @@ public class UIController : BaseUIMenu
 
     public GameObject pauseMenu, mapDisplay, bigMapText;
 
-    //public Image currentGun;
-    //public Text gunText;
-
     public Slider bossHealthBar;
 
     private void Awake()
     {
-        instance = this;
+        Ins = this;
 
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         fadeOutBlack = true;
         fadeToBlack = false;
         CanvasManager.Ins.OpenUI(UIName.LoadingUI, null);
-
-        //currentGun.sprite = PlayerController.instance.availableGuns[PlayerController.instance.currentGun].gunUI;
-        //gunText.text = PlayerController.instance.availableGuns[PlayerController.instance.currentGun].weaponName;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (fadeOutBlack)

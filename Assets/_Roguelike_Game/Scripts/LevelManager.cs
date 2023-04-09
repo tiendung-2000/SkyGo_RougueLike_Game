@@ -31,7 +31,7 @@ public class LevelManager : MonoBehaviour
 
         Time.timeScale = 1f;
 
-        UIController.instance.cointText.text = currentCoins.ToString();
+        UIController.Ins.cointText.text = currentCoins.ToString();
     }
 
     // Update is called once per frame
@@ -49,7 +49,7 @@ public class LevelManager : MonoBehaviour
 
         PlayerController.Ins.canMove = false;
 
-        UIController.instance.StartFadeToBlack();
+        UIController.Ins.StartFadeToBlack();
 
         yield return new WaitForSeconds(waitToLoad);
 
@@ -65,14 +65,14 @@ public class LevelManager : MonoBehaviour
     {
         if (!isPaused)
         {
-            UIController.instance.pauseMenu.SetActive(true);
+            UIController.Ins.pauseMenu.SetActive(true);
             isPaused = true;
 
             Time.timeScale = 0f;
         }
         else
         {
-            UIController.instance.pauseMenu.SetActive(false);
+            UIController.Ins.pauseMenu.SetActive(false);
             isPaused = false;
 
             Time.timeScale = 1f;
@@ -82,7 +82,7 @@ public class LevelManager : MonoBehaviour
     public void GetCoins(int amount)
     {
         currentCoins += amount;
-        UIController.instance.cointText.text = currentCoins.ToString();
+        UIController.Ins.cointText.text = currentCoins.ToString();
     }
 
     public void SpendCoins(int amount)
@@ -93,6 +93,6 @@ public class LevelManager : MonoBehaviour
         {
             currentCoins = 0;
         }
-        UIController.instance.cointText.text = currentCoins.ToString();
+        UIController.Ins.cointText.text = currentCoins.ToString();
     }
 }

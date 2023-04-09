@@ -2600,7 +2600,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3709,6 +3709,7 @@ MonoBehaviour:
   healthText: {fileID: 5077071928137403372}
   cointText: {fileID: 690706847954326830}
   deathScreen: {fileID: 8858606189044714652}
+  bossHub: {fileID: 7419865689024058901}
   fadeScreen: {fileID: 8858606188658615555}
   fadeSpeed: 1
   newGameScene: Town

@@ -513,6 +513,11 @@ MonoBehaviour:
   enemyGroup: {fileID: 6034998564426520007}
   isEnemyCenter: 1
   theRoom: {fileID: 0}
+  checkPoint: {fileID: 0}
+  maxX: 0
+  minX: 0
+  maxY: 0
+  minY: 0
 --- !u!1 &8077983614000727170
 GameObject:
   m_ObjectHideFlags: 0

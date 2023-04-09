@@ -38,7 +38,13 @@ public class SteamPunkRhinoceros : MonoBehaviour
     {
         bossController = GetComponent<BossController>();
         bossController.ske.AnimationState.Complete += AnimationState_Complete;
-        if (shouldMove == true)
+        
+    }
+
+    IEnumerator IEWaitToAttack()
+    {
+        yield return new WaitForSeconds(3f);
+        if (shouldMove == true /*&& bossController.playerOnZone == true*/)
         {
             bossController.ske.AnimationState.SetAnimation(0, AnimationKeys.MN1_MOVE, false);
         }

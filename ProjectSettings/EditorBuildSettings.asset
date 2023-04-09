@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/_Roguelike_Game/Scene/Boss 2.unity
+    guid: aaed5517a0702bd44937f7c45f27ef9c
+  - enabled: 1
     path: Assets/_Roguelike_Game/Scene/Boss 1.unity
     guid: e8a86e3799b5e044e8c0076a3552afcb
   - enabled: 1

@@ -23,9 +23,9 @@ public class PlayerHealthController : MonoBehaviour
         maxHealth = CharacterTracker.instance.maxHealth;
         currentHealth = CharacterTracker.instance.currentHealth;
 
-        UIController.instance.healthSlider.maxValue = maxHealth;
-        UIController.instance.healthSlider.value = currentHealth;
-        UIController.instance.healthText.text = currentHealth.ToString() + " / " + maxHealth.ToString();
+        UIController.Ins.healthSlider.maxValue = maxHealth;
+        UIController.Ins.healthSlider.value = currentHealth;
+        UIController.Ins.healthText.text = currentHealth.ToString() + " / " + maxHealth.ToString();
     }
 
     // Update is called once per frame
@@ -58,15 +58,15 @@ public class PlayerHealthController : MonoBehaviour
             {
                 PlayerController.Ins.gameObject.SetActive(false);
 
-                UIController.instance.deathScreen.SetActive(true);
+                UIController.Ins.deathScreen.SetActive(true);
 
                 AudioManager.instance.PlayGameOver();
 
                 AudioManager.instance.PlaySFX(9);
             }
 
-            UIController.instance.healthSlider.value = currentHealth;
-            UIController.instance.healthText.text = currentHealth.ToString() + " / " + maxHealth.ToString();
+            UIController.Ins.healthSlider.value = currentHealth;
+            UIController.Ins.healthText.text = currentHealth.ToString() + " / " + maxHealth.ToString();
         }
     }
 
@@ -86,8 +86,8 @@ public class PlayerHealthController : MonoBehaviour
             currentHealth = maxHealth;
         }
 
-        UIController.instance.healthSlider.value = currentHealth;
-        UIController.instance.healthText.text = currentHealth.ToString() + " / " + maxHealth.ToString();
+        UIController.Ins.healthSlider.value = currentHealth;
+        UIController.Ins.healthText.text = currentHealth.ToString() + " / " + maxHealth.ToString();
     }
 
     public void IncreaseMaxHealth(int amount)
@@ -97,8 +97,8 @@ public class PlayerHealthController : MonoBehaviour
         //currentHealth += amount;
         currentHealth = maxHealth;
 
-        UIController.instance.healthSlider.maxValue = maxHealth;
-        UIController.instance.healthSlider.value = currentHealth;
-        UIController.instance.healthText.text = currentHealth.ToString() + " / " + maxHealth.ToString();
+        UIController.Ins.healthSlider.maxValue = maxHealth;
+        UIController.Ins.healthSlider.value = currentHealth;
+        UIController.Ins.healthText.text = currentHealth.ToString() + " / " + maxHealth.ToString();
     }
 }
