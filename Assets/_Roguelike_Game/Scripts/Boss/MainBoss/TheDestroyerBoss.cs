@@ -10,7 +10,7 @@ public class TheDestroyerBoss : MonoBehaviour
 
     BossController bossController;
 
-    public SkeletonAnimation ske;
+    //public SkeletonAnimation ske;
 
     [Header("Moving")]
     public bool shouldMove;
@@ -51,11 +51,11 @@ public class TheDestroyerBoss : MonoBehaviour
     {
         bossController = GetComponent<BossController>();
 
-        ske.AnimationState.Complete += AnimationState_Complete;
+        bossController.ske.AnimationState.Complete += AnimationState_Complete;
 
         if (shouldMove == true)
         {
-            ske.AnimationState.SetAnimation(0, "Move", false);
+            bossController.ske.AnimationState.SetAnimation(0, "Move", false);
         }
     }
     private void Update()
@@ -89,43 +89,43 @@ public class TheDestroyerBoss : MonoBehaviour
         {
             case AnimationKeys.B1_MOVE:
                 shouldMove = false;
-                ske.AnimationState.SetAnimation(0, AnimationKeys.B1_SKILL_1_READY, false);
+                bossController.ske.AnimationState.SetAnimation(0, AnimationKeys.B1_SKILL_1_READY, false);
                 break;
 
             //ban 10 vien dan
             case AnimationKeys.B1_SKILL_1_READY:
-                ske.AnimationState.SetAnimation(0, AnimationKeys.B1_SKILL_1_ATTACK, false);
+                bossController.ske.AnimationState.SetAnimation(0, AnimationKeys.B1_SKILL_1_ATTACK, false);
                 phaseFirst = true;
                 break;
 
             case AnimationKeys.B1_SKILL_1_ATTACK:
                 phaseFirst = false;
-                ske.AnimationState.SetAnimation(0, AnimationKeys.B1_SKILL_2, false);
+                bossController.ske.AnimationState.SetAnimation(0, AnimationKeys.B1_SKILL_2, false);
                 phaseSecond = true;
                 break;
 
             case AnimationKeys.B1_SKILL_2:
                 phaseSecond = false;
-                ske.AnimationState.SetAnimation(0, AnimationKeys.B1_SKILL_3_READY, false);
+                bossController.ske.AnimationState.SetAnimation(0, AnimationKeys.B1_SKILL_3_READY, false);
                 break;
 
             case AnimationKeys.B1_SKILL_3_READY:
                 Dash();
-                ske.AnimationState.SetAnimation(0, AnimationKeys.B1_SKILL_3_ATTACK, false);
+                bossController.ske.AnimationState.SetAnimation(0, AnimationKeys.B1_SKILL_3_ATTACK, false);
                 break;
 
             case AnimationKeys.B1_SKILL_3_ATTACK:
-                ske.AnimationState.SetAnimation(0, AnimationKeys.B1_SKILL_4_READY, false);
+                bossController.ske.AnimationState.SetAnimation(0, AnimationKeys.B1_SKILL_4_READY, false);
                 break;
 
             case AnimationKeys.B1_SKILL_4_READY:
-                ske.AnimationState.SetAnimation(0, AnimationKeys.B1_SKILL_4_ATTACK, false);
+                bossController.ske.AnimationState.SetAnimation(0, AnimationKeys.B1_SKILL_4_ATTACK, false);
                 phaseFour = true;
                 break;
 
             case AnimationKeys.B1_SKILL_4_ATTACK:
                 phaseFour = false;
-                ske.AnimationState.SetAnimation(0, AnimationKeys.B1_MOVE, false);
+                bossController.ske.AnimationState.SetAnimation(0, AnimationKeys.B1_MOVE, false);
                 shouldMove = true;
                 break;
 
@@ -158,7 +158,7 @@ public class TheDestroyerBoss : MonoBehaviour
 
             foreach (Transform point in shotPointsFirst)
             {
-                Instantiate(bulletFirst, point.position, point.rotation);
+                SmartPool.Ins.Spawn(bulletFirst, point.position, point.rotation);
             }
         }
     }
@@ -172,7 +172,7 @@ public class TheDestroyerBoss : MonoBehaviour
 
             foreach (Transform point in shotPointsSecond)
             {
-                var newBullet = Instantiate(bulletSecond, point.position, point.rotation);
+                var newBullet = SmartPool.Ins.Spawn(bulletSecond, point.position, point.rotation);
                 //newBullet.transform.Rotate(0f, 0f, Random.Range(-xAngle, yAngle));
             }
         }
@@ -192,7 +192,7 @@ public class TheDestroyerBoss : MonoBehaviour
 
             foreach (Transform point in shotPointsFour)
             {
-                Instantiate(bulletFour, point.position, point.rotation);
+                SmartPool.Ins.Spawn(bulletFour, point.position, point.rotation);
             }
         }
     }

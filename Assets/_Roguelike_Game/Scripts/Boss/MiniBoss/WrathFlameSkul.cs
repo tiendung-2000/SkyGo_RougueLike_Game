@@ -1,4 +1,5 @@
 using DG.Tweening;
+using Spine.Unity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,9 +10,7 @@ public class WrathFlameSkul : MonoBehaviour
 
     BossController bossController;
 
-    public float delayStarting;
-    public float delayAction;
-    public float delaySequence;
+    //public SkeletonAnimation ske;
 
     [Header("Moving")]
     public bool shouldMove;
@@ -42,7 +41,40 @@ public class WrathFlameSkul : MonoBehaviour
     private void Start()
     {
         bossController = GetComponent<BossController>();
-        StartCoroutine(Starting());
+        bossController.ske.AnimationState.Complete += AnimationState_Complete;
+        bossController.ske.AnimationState.SetAnimation(0, AnimationKeys.MN2_MOVE, false);
+    }
+
+    private void AnimationState_Complete(Spine.TrackEntry trackEntry)
+    {
+        switch (trackEntry.Animation.Name)
+        {
+            case AnimationKeys.MN2_MOVE:
+                shouldMove = false;
+                bossController.ske.AnimationState.SetAnimation(0, AnimationKeys.MN2_SKILL_1, false);
+                shootFirst = true;
+                break;
+            case AnimationKeys.MN2_SKILL_1:
+                shootFirst = false;
+                bossController.ske.AnimationState.SetAnimation(0, AnimationKeys.MN2_SKILL_2, false);
+                shootSecond = true;
+                break;
+            case AnimationKeys.MN2_SKILL_2:
+                shootSecond = false;
+                bossController.ske.AnimationState.SetAnimation(0, AnimationKeys.MN2_SKILL_3_READY, false);
+                break;
+            case AnimationKeys.MN2_SKILL_3_READY:
+                Dash();
+                bossController.ske.AnimationState.SetAnimation(0, AnimationKeys.MN2_SKILL_3_ATTACK, false);
+                break;
+            case AnimationKeys.MN2_SKILL_3_ATTACK:
+                shouldMove = true;
+                bossController.ske.AnimationState.SetAnimation(0, AnimationKeys.MN2_MOVE, false);
+                break;
+            case AnimationKeys.MN2_DIE:
+                Destroy(gameObject);
+                break;
+        }
     }
 
     private void Update()
@@ -67,13 +99,10 @@ public class WrathFlameSkul : MonoBehaviour
 
     public void Moving()
     {
-        //handle movement
-        if (bossController.currentHealth > 0)
+        if (bossController.currentHealth > 0 && shouldMove == true)
         {
-            moveDirection = Vector2.zero;
-            moveDirection = PlayerController.Ins.transform.position - transform.position;
+            transform.position = Vector2.MoveTowards(transform.position, PlayerController.Ins.transform.position, moveSpeed * Time.deltaTime);
             moveDirection.Normalize();
-            theRB.velocity = moveDirection * moveSpeed;
         }
     }
 
@@ -85,7 +114,7 @@ public class WrathFlameSkul : MonoBehaviour
 
             foreach (Transform t in shotPointsFirst)
             {
-                var newBullet = Instantiate(bulletFirst, t.position, t.rotation);
+                var newBullet = SmartPool.Ins.Spawn(bulletFirst, t.position, t.rotation);
                 newBullet.transform.Rotate(0f, 0f, Random.Range(-xAngle, yAngle));
             }
         }
@@ -99,9 +128,15 @@ public class WrathFlameSkul : MonoBehaviour
 
             foreach (Transform t in shotPointsSecond)
             {
-                Instantiate(bulletSecond, t.position, t.rotation);
+                SmartPool.Ins.Spawn(bulletSecond, t.position, t.rotation);
             }
         }
+    }
+
+    public void Dash()
+    {
+        var pos = PlayerController.Ins.transform.localPosition;
+        transform.DOMove(pos, .867f);
     }
 
     //public void ShotRadia()
@@ -123,72 +158,72 @@ public class WrathFlameSkul : MonoBehaviour
     //}
 
     //==================SETING ACTION==================//
-    public void ShootAction(int type)
-    {
-        // type == 0 => ban 5 vien dan || type == 1 => ban 3 vien dan
-        if (bossController.currentHealth > 0)
-        {
-            if (type == 0)
-            {
-                if (shoot != null) StopCoroutine(shoot);
-                shoot = StartCoroutine(DelayShootFirst());
-            }
-            else if (type == 1)
-            {
-                if (shootRadia != null) StopCoroutine(shootRadia);
-                shootRadia = StartCoroutine(DelayShootSecond());
-            }
-        }
-    }
+    //public void ShootAction(int type)
+    //{
+    //    // type == 0 => ban 5 vien dan || type == 1 => ban 3 vien dan
+    //    if (bossController.currentHealth > 0)
+    //    {
+    //        if (type == 0)
+    //        {
+    //            if (shoot != null) StopCoroutine(shoot);
+    //            shoot = StartCoroutine(DelayShootFirst());
+    //        }
+    //        else if (type == 1)
+    //        {
+    //            if (shootRadia != null) StopCoroutine(shootRadia);
+    //            shootRadia = StartCoroutine(DelayShootSecond());
+    //        }
+    //    }
+    //}
 
-    public void DashAction()
-    {
-        if (bossController.currentHealth > 0)
-        {
-            if (dash != null) StopCoroutine(dash);
+    //public void DashAction()
+    //{
+    //    if (bossController.currentHealth > 0)
+    //    {
+    //        if (dash != null) StopCoroutine(dash);
 
-            dash = StartCoroutine(DelayDash());
-        }
-    }
+    //        dash = StartCoroutine(DelayDash());
+    //    }
+    //}
 
-    IEnumerator Starting()
-    {
-        yield return new WaitForSeconds(delayStarting);
-        shootFirst = false;
-        ShootAction(0);
-    }
+    //IEnumerator Starting()
+    //{
+    //    yield return new WaitForSeconds(delayStarting);
+    //    shootFirst = false;
+    //    ShootAction(0);
+    //}
 
-    Coroutine shoot;
-    IEnumerator DelayShootFirst()
-    {
-        shootFirst = true;
-        yield return new WaitForSeconds(delayAction);
-        shootFirst = false;
-        DOVirtual.DelayedCall(1, () =>
-        {
-            ShootAction(1);
-        });
-    }
+    //Coroutine shoot;
+    //IEnumerator DelayShootFirst()
+    //{
+    //    shootFirst = true;
+    //    yield return new WaitForSeconds(delayAction);
+    //    shootFirst = false;
+    //    DOVirtual.DelayedCall(1, () =>
+    //    {
+    //        ShootAction(1);
+    //    });
+    //}
 
-    Coroutine shootRadia;
-    IEnumerator DelayShootSecond()
-    {
-        shootSecond = true;
-        yield return new WaitForSeconds(delayAction);
-        shootSecond = false;
-        DashAction();
-    }
+    //Coroutine shootRadia;
+    //IEnumerator DelayShootSecond()
+    //{
+    //    shootSecond = true;
+    //    yield return new WaitForSeconds(delayAction);
+    //    shootSecond = false;
+    //    DashAction();
+    //}
 
-    Coroutine dash;
-    IEnumerator DelayDash()
-    {
-        DOVirtual.DelayedCall(1, () =>
-        {
-            var pos = PlayerController.Ins.transform.localPosition;
-            Debug.Log(pos);
-            transform.DOMove(pos, 1f);
-        });
-        yield return new WaitForSeconds(delaySequence + 1);
-        ShootAction(0);
-    }
+    //Coroutine dash;
+    //IEnumerator DelayDash()
+    //{
+    //    DOVirtual.DelayedCall(1, () =>
+    //    {
+    //        var pos = PlayerController.Ins.transform.localPosition;
+    //        Debug.Log(pos);
+    //        transform.DOMove(pos, 1f);
+    //    });
+    //    yield return new WaitForSeconds(delaySequence + 1);
+    //    ShootAction(0);
+    //}
 }

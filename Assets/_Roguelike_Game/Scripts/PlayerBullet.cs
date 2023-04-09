@@ -15,13 +15,6 @@ public class PlayerBullet : MonoBehaviour
     public int mediumDamage = 20;
     public int highDamage = 30;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
     void Update()
     {
         theRB.velocity = transform.right * speed;

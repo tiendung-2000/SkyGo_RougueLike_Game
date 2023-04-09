@@ -20,14 +20,14 @@ public class BossBulletExplode : MonoBehaviour
     {
         DOVirtual.DelayedCall(1, () =>
         {
-            Destroy(gameObject);
+            SmartPool.Ins.Despawn(gameObject);
         });
 
         //AudioManager.instance.PlaySFX(4);
 
         if (other.tag == "Player")
         {
-            PlayerHealthController.Ins.DamagePlayer();
+            //DataManager.Ins.DamagePlayer();
         }
     }
 }

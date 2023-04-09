@@ -5,7 +5,7 @@ using UnityEngine;
 public class BossAimming : MonoBehaviour
 {
     public GameObject shootPointParent;
-    public Transform shootPointScale;
+    //public Transform shootPointScale;
     public float rotate = 1f;
 
     private void Update()
@@ -40,12 +40,12 @@ public class BossAimming : MonoBehaviour
             if (this.transform.position.x > closest.transform.position.x)
             {
                 transform.localScale = Vector3.one;
-                shootPointScale.localScale = new Vector3(-1f, -1f, rotate);
+                shootPointParent.transform.localScale = new Vector3(-1f, -1f, rotate);
             }
             else
             {
                 transform.localScale = new Vector3(-1f, 1f, 1f);
-                shootPointScale.localScale = Vector3.one;
+                shootPointParent.transform.localScale = Vector3.one;
             }
         }
     }

@@ -11,7 +11,7 @@ public class EliminatedBishopBoss : MonoBehaviour
 
     BossController bossController;
 
-    public SkeletonAnimation ske;
+    //public SkeletonAnimation ske;
 
     [Header("Moving")]
     public bool shouldMove;
@@ -56,11 +56,11 @@ public class EliminatedBishopBoss : MonoBehaviour
     {
         bossController = GetComponent<BossController>();
 
-        ske.AnimationState.Complete += AnimationState_Complete; ;
+        bossController.ske.AnimationState.Complete += AnimationState_Complete; ;
 
         if (shouldMove == true)
         {
-            ske.AnimationState.SetAnimation(0, "Move", false);
+            bossController.ske.AnimationState.SetAnimation(0, "Move", false);
         }
     }
 
@@ -70,41 +70,41 @@ public class EliminatedBishopBoss : MonoBehaviour
         {
             case AnimationKeys.B2_MOVE:
                 shouldMove = false;
-                ske.AnimationState.SetAnimation(0, AnimationKeys.B2_ATTACK_1, false);
+                bossController.ske.AnimationState.SetAnimation(0, AnimationKeys.B2_ATTACK_1, false);
                 phaseFirst = true;
                 break;
 
             case AnimationKeys.B2_ATTACK_1:
                 phaseFirst = false;
-                ske.AnimationState.SetAnimation(0, AnimationKeys.B2_ATTACK_2, false);
+                bossController.ske.AnimationState.SetAnimation(0, AnimationKeys.B2_ATTACK_2, false);
                 phaseSecond = true;
                 break;
 
             case AnimationKeys.B2_ATTACK_2:
                 phaseSecond = false;
-                ske.AnimationState.SetAnimation(0, AnimationKeys.B2_ATTACK_3_READY, false);
+                bossController.ske.AnimationState.SetAnimation(0, AnimationKeys.B2_ATTACK_3_READY, false);
                 break;
 
             case AnimationKeys.B2_ATTACK_3_READY:
                 Dash();
-                ske.AnimationState.SetAnimation(0, AnimationKeys.B2_ATTACK_3_MOVE, false);
+                bossController.ske.AnimationState.SetAnimation(0, AnimationKeys.B2_ATTACK_3_MOVE, false);
                 break;
 
             case AnimationKeys.B2_ATTACK_3_MOVE:
                 phaseFour = true;
-                ske.AnimationState.SetAnimation(0, AnimationKeys.B2_ATTACK_4, false);
+                bossController.ske.AnimationState.SetAnimation(0, AnimationKeys.B2_ATTACK_4, false);
                 break;
 
             case AnimationKeys.B2_ATTACK_4:
                 phaseFour = false;
-                ske.AnimationState.SetAnimation(0, AnimationKeys.B2_ATTACK_5, false);
+                bossController.ske.AnimationState.SetAnimation(0, AnimationKeys.B2_ATTACK_5, false);
                 phaseFive = true;
                 break;
 
             case AnimationKeys.B2_ATTACK_5:
                 phaseFive = false;
                 shouldMove = true;
-                ske.AnimationState.SetAnimation(0, AnimationKeys.B1_MOVE, false);
+                bossController.ske.AnimationState.SetAnimation(0, AnimationKeys.B1_MOVE, false);
                 break;
 
             case AnimationKeys.B2_DIE:
@@ -160,7 +160,7 @@ public class EliminatedBishopBoss : MonoBehaviour
 
             foreach (Transform t in shotPointsFirst)
             {
-                Instantiate(bulletFirst, t.position, t.rotation);
+                SmartPool.Ins.Spawn(bulletFirst, t.position, t.rotation);
             }
         }
     }
@@ -172,7 +172,7 @@ public class EliminatedBishopBoss : MonoBehaviour
 
             foreach (Transform t in shotPointsSecond)
             {
-                Instantiate(bulletSecond, t.position, t.rotation);
+                SmartPool.Ins.Spawn(bulletSecond, t.position, t.rotation);
             }
         }
     }
@@ -189,7 +189,7 @@ public class EliminatedBishopBoss : MonoBehaviour
 
             foreach (Transform t in shotPointsFour)
             {
-                Instantiate(bulletFour, t.position, t.rotation);
+                SmartPool.Ins.Spawn(bulletFour, t.position, t.rotation);
             }
         }
     }
@@ -200,7 +200,7 @@ public class EliminatedBishopBoss : MonoBehaviour
             shootCounter = fireRateFive;
             foreach (Transform t in shotPointsFive)
             {
-                Instantiate(bulletFive, t.position, t.rotation);
+                SmartPool.Ins.Spawn(bulletFive, t.position, t.rotation);
             }
         }
     }

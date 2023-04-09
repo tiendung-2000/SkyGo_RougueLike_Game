@@ -29,10 +29,10 @@ public class BossBullet : MonoBehaviour
     {
         transform.position += direction * speed * Time.deltaTime;
 
-        if (!BossController.Ins.gameObject.activeInHierarchy)
-        {
-            Destroy(gameObject);
-        }
+        //if (!BossController.Ins.gameObject.activeInHierarchy)
+        //{
+        //    SmartPool.Ins.Despawn(gameObject);
+        //}
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -42,7 +42,7 @@ public class BossBullet : MonoBehaviour
             PlayerHealthController.Ins.DamagePlayer();
         }
 
-        Destroy(gameObject);
+        SmartPool.Ins.Despawn(gameObject);
 
         //AudioManager.instance.PlaySFX(4);
     }

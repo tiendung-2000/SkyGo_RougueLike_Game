@@ -11,7 +11,7 @@ public class NamelessThingBoss : MonoBehaviour
 
     BossController bossController;
 
-    public SkeletonAnimation ske;
+    //public SkeletonAnimation ske;
 
     [Header("Shooting")]
     public float xAngle;
@@ -19,13 +19,18 @@ public class NamelessThingBoss : MonoBehaviour
 
     public int dashCount;
 
+    public Transform shootGr;
+
     public Transform[] pointToMove;
 
     public Transform[] shotPointsFirst;
     public Transform[] shotPointsThird;
     public Transform[] shotPointsFour;
 
-    public GameObject bossExplode;
+    public ParticleSystem vfx;
+
+    public Collider2D col;
+
     public GameObject bulletFirst;
     public GameObject bulletThird;
     public GameObject bulletFour;
@@ -51,9 +56,9 @@ public class NamelessThingBoss : MonoBehaviour
     {
         bossController = GetComponent<BossController>();
 
-        ske.AnimationState.Complete += AnimationState_Complete;
+        bossController.ske.AnimationState.Complete += AnimationState_Complete;
 
-        ske.AnimationState.SetAnimation(0, "Idle", false);
+        bossController.ske.AnimationState.SetAnimation(0, "Idle", false);
     }
 
     private void AnimationState_Complete(TrackEntry trackEntry)
@@ -61,54 +66,73 @@ public class NamelessThingBoss : MonoBehaviour
         switch (trackEntry.Animation.Name)
         {
             case AnimationKeys.B3_IDLE:
-                ske.AnimationState.SetAnimation(0, AnimationKeys.B3_SKILL_1_ATTACK, false);
+                bossController.ske.AnimationState.SetAnimation(0, AnimationKeys.B3_SKILL_1_ATTACK, false);
+                phaseFirst = true;
                 break;
 
             case AnimationKeys.B3_SKILL_1_ATTACK:
-                ske.AnimationState.SetAnimation(0, AnimationKeys.B3_SKILL_2_READY, false);
+                phaseFirst = false;
+                bossController.ske.AnimationState.SetAnimation(0, AnimationKeys.B3_SKILL_2_READY, false);
                 break;
 
             case AnimationKeys.B3_SKILL_2_READY:
                 Dash();
-                ske.AnimationState.SetAnimation(0, AnimationKeys.B3_SKILL_2_MOVE, false);
+                bossController.ske.AnimationState.SetAnimation(0, AnimationKeys.B3_SKILL_2_MOVE, false);
                 break;
 
             case AnimationKeys.B3_SKILL_2_MOVE:
-
-                //DOVirtual.DelayedCall(7.098f, () =>
-                //{
-                //    ske.AnimationState.SetAnimation(0, AnimationKeys.B3_SKILL_3_ATTACK, false);
-                //});
                 if (dashCount == 3)
                 {
-                    ske.AnimationState.SetAnimation(0, AnimationKeys.B3_SKILL_3_ATTACK, false);
+                    bossController.ske.AnimationState.SetAnimation(0, AnimationKeys.B3_SKILL_3_ATTACK, false);
+                    phaseThird = true;
                 }
                 else
                 {
-                    ske.AnimationState.SetAnimation(0, AnimationKeys.B3_SKILL_2_READY, false);
+                    bossController.ske.AnimationState.SetAnimation(0, AnimationKeys.B3_SKILL_2_READY, false);
                 }
                 break;
 
             case AnimationKeys.B3_SKILL_3_ATTACK:
                 dashCount = 0;
-                ske.AnimationState.SetAnimation(0, AnimationKeys.B3_SKILL_4_ATTACK, false);
+                phaseThird = false;
+                bossController.ske.AnimationState.SetAnimation(0, AnimationKeys.B3_SKILL_4_ATTACK, false);
+                phaseFour = true;
                 break;
 
             case AnimationKeys.B3_SKILL_4_ATTACK:
-                ske.AnimationState.SetAnimation(0, AnimationKeys.B3_SKILL_5_READY, false);
+                phaseFour = false;
+                bossController.ske.AnimationState.SetAnimation(0, AnimationKeys.B3_SKILL_5_READY, false);
+                col.enabled = false;
+
                 break;
 
             case AnimationKeys.B3_SKILL_5_READY:
                 GetComponent<MeshRenderer>().sortingLayerName = "Default";
+                col.enabled = true;
                 DOVirtual.DelayedCall(2f, () =>
                 {
+                    bossController.ske.AnimationState.SetAnimation(0, AnimationKeys.B3_SKILL_5_MOVE, false);
                     GetComponent<MeshRenderer>().sortingLayerName = "Enemies";
-                    ske.AnimationState.SetAnimation(0, AnimationKeys.B3_SKILL_5_MOVE, false);
                 });
                 break;
 
             case AnimationKeys.B3_SKILL_5_MOVE:
-                ske.AnimationState.SetAnimation(0, AnimationKeys.B3_IDLE, false);
+                bossController.ske.AnimationState.SetAnimation(0, AnimationKeys.B3_IDLE, true);
+
+                vfx.Play();
+
+                DOVirtual.DelayedCall(.5f, () =>
+                {
+                    vfx.Play();
+
+
+                    DOVirtual.DelayedCall(.5f, () =>
+                    {
+                        vfx.Play();
+
+                            bossController.ske.AnimationState.SetAnimation(0, AnimationKeys.B3_IDLE, false);
+                    });
+                });
                 break;
 
             case AnimationKeys.B3_DIE:
@@ -120,6 +144,21 @@ public class NamelessThingBoss : MonoBehaviour
     private void Update()
     {
         shootCounter -= Time.deltaTime;
+
+        if (phaseFirst == true)
+        {
+            PhaseFirst();
+        }
+
+        if (phaseThird == true)
+        {
+            PhaseThird();
+        }
+
+        if (phaseFour == true)
+        {
+            PhaseFour();
+        }
     }
     public void PhaseFirst()
     {
@@ -129,7 +168,7 @@ public class NamelessThingBoss : MonoBehaviour
 
             foreach (Transform t in shotPointsFirst)
             {
-                Instantiate(bulletFirst, t.position, t.rotation);
+                SmartPool.Ins.Spawn(bulletFirst, t.position, t.rotation);
             }
         }
     }
@@ -141,7 +180,7 @@ public class NamelessThingBoss : MonoBehaviour
 
             foreach (Transform t in shotPointsThird)
             {
-                Instantiate(bulletThird, t.position, t.rotation);
+                SmartPool.Ins.Spawn(bulletThird, t.position, t.rotation);
             }
         }
     }
@@ -153,7 +192,7 @@ public class NamelessThingBoss : MonoBehaviour
 
             foreach (Transform t in shotPointsFour)
             {
-                Instantiate(bulletFour, t.position, t.rotation);
+                SmartPool.Ins.Spawn(bulletFour, t.position, t.rotation);
             }
         }
     }
@@ -168,43 +207,23 @@ public class NamelessThingBoss : MonoBehaviour
             transform.parent.GetComponent<RoomCenter>().GetTarget();
             transform.localPosition = transform.parent.GetComponent<RoomCenter>().checkPoint.localPosition;
             dashCount++;
-
         }
-
-
     }
 
-    private void GetTarget()
-    {
+    //public void Explode()
+    //{
+    //    vfx.Play();
+    //    DOVirtual.DelayedCall(.5f, () =>
+    //    {
+    //        vfx.Play();
 
-    }
+    //        DOVirtual.DelayedCall(.5f, () =>
+    //        {
+    //            vfx.Play();
+    //        });
+    //    });
 
-    public void Teleport()
-    {
-        //Hold 2s
-        gameObject.tag = "Untagged";
-        gameObject.layer = 0;
-        DOVirtual.DelayedCall(2, () =>
-        {
-            gameObject.tag = "Boss";
-            gameObject.layer = 10;
-
-            gameObject.transform.position = pointToMove[(Random.Range(0, pointToMove.Length - 1))].position;
-
-            DOVirtual.DelayedCall(.5f, () =>
-            {
-                Instantiate(bossExplode, transform.position, transform.rotation);
-                DOVirtual.DelayedCall(.5f, () =>
-                {
-                    Instantiate(bossExplode, transform.position, transform.rotation);
-                    DOVirtual.DelayedCall(.5f, () =>
-                    {
-                        Instantiate(bossExplode, transform.position, transform.rotation);
-                    });
-                });
-            });
-        });
-    }
+    //}
 
     ////==================SETING ACTION==================//
 

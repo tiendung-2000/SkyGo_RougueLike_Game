@@ -1243,7 +1243,6 @@ GameObject:
   - component: {fileID: 2810082709217451197}
   - component: {fileID: 6281734026790201870}
   - component: {fileID: 3386525941384937362}
-  - component: {fileID: 1899769092}
   m_Layer: 10
   m_Name: EliminatedBishop
   m_TagString: Boss
@@ -1299,8 +1298,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bde77d9c4977bdd43a6805483e79e962, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootPointParent: {fileID: 8477443136204837396}
-  shootPointScale: {fileID: 1946948000265356291}
+  shootPointParent: {fileID: 0}
   rotate: 1
 --- !u!114 &5279466344905361317
 MonoBehaviour:
@@ -1331,7 +1329,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3fd510f02946bf40bfd6a6585461065, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ske: {fileID: 6281734026790201870}
   shouldMove: 1
   moveSpeed: 5
   theRB: {fileID: 5279466344905361322}
@@ -1427,8 +1424,8 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1616161799
-  m_SortingLayer: 4
+  m_SortingLayerID: 1716793791
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &6281734026790201870
@@ -1494,18 +1491,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.0438309, y: 5.1781363}
   m_EdgeRadius: 0
---- !u!114 &1899769092
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5279466344905361312}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4711b2eca83ea3345bd3736cf772a40c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5590874910784523814
 GameObject:
   m_ObjectHideFlags: 0

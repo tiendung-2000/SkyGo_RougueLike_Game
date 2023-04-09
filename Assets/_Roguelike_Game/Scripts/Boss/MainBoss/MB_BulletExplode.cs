@@ -37,18 +37,18 @@ public class MB_BulletExplode : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Instantiate(explodeEffect, transform.position, transform.rotation);
+        SmartPool.Ins.Spawn(explodeEffect, transform.position, transform.rotation);
         //DOVirtual.DelayedCall(.5f, () =>
         //{
         //    SmartPool.Ins.Spawn(explodeEffect, transform.position, transform.rotation);
         //});
-        Destroy(gameObject);
+        SmartPool.Ins.Despawn(gameObject);
 
         //AudioManager.instance.PlaySFX(4);
 
         if (other.tag == "Player")
         {
-            PlayerHealthController.Ins.DamagePlayer();
+            //DataManager.Ins.DamagePlayer();
         }
     }
 }

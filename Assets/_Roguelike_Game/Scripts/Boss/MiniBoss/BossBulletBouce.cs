@@ -24,6 +24,11 @@ public class BossBulletBouce : MonoBehaviour
         theRB.velocity = transform.right * speed;
     }
 
+    private void OnEnable()
+    {
+        currentBounceCount = 0;
+    }
+
     private void FixedUpdate()
     {
         lastVelocity = theRB.velocity;
@@ -33,7 +38,7 @@ public class BossBulletBouce : MonoBehaviour
     {
         if (currentBounceCount == bounceCount)
         {
-            Destroy(gameObject);
+            SmartPool.Ins.Despawn(gameObject);
         }
         else
         {
@@ -45,11 +50,21 @@ public class BossBulletBouce : MonoBehaviour
                 theRB.AddForce(new Vector2(Random.Range(-5, 5), Random.Range(-5, 5)));
 
                 currentBounceCount++;
-            }else if (other.gameObject.CompareTag("Player"))
-            {
-                PlayerHealthController.Ins.DamagePlayer();
-                Destroy(gameObject);
             }
+            //else if (other.gameObject.CompareTag("Player"))
+            //{
+            //    DataManager.Ins.DamagePlayer();
+            //    SmartPool.Ins.Despawn(gameObject);
+            //}
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            //DataManager.Ins.DamagePlayer();
+            SmartPool.Ins.Despawn(gameObject);
         }
     }
 }

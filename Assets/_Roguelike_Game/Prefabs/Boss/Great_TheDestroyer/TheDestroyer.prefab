@@ -804,7 +804,6 @@ GameObject:
   - component: {fileID: 5472462049780677376}
   - component: {fileID: 5472462049780677381}
   - component: {fileID: 4629950145575153209}
-  - component: {fileID: 5472462049780677380}
   - component: {fileID: 5472462049780677379}
   - component: {fileID: 5472462049780677378}
   - component: {fileID: 326695824792275701}
@@ -880,18 +879,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5526371, y: 4.8}
   m_EdgeRadius: 0
---- !u!114 &5472462049780677380
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5472462049780677391}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4711b2eca83ea3345bd3736cf772a40c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5472462049780677379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -904,8 +891,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bde77d9c4977bdd43a6805483e79e962, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootPointParent: {fileID: 5472462048323241528}
-  shootPointScale: {fileID: 5472462048323241529}
+  shootPointParent: {fileID: 5472462049780677391}
   rotate: 1
 --- !u!114 &5472462049780677378
 MonoBehaviour:
@@ -936,7 +922,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cef9379ed89556642bbb477ee9a1ef51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ske: {fileID: 5030806951854218695}
   shouldMove: 1
   moveSpeed: 4
   theRB: {fileID: 5472462049780677381}
@@ -1031,8 +1016,8 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1616161799
-  m_SortingLayer: 4
+  m_SortingLayerID: 1716793791
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &5030806951854218695

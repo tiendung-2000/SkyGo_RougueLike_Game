@@ -605,6 +605,7 @@ MonoBehaviour:
   weaponName: Phoenix Bow
   itemCost: 15
   weaponShopSprite: {fileID: 21300000, guid: 346ed9a2777d30a41ba28bb9c62a08c5, type: 3}
+  arrow: {fileID: 0}
   ArrowPrefab: {fileID: 1128771746439911396, guid: d1a95a539ad625f459d82e428d835aa9,
     type: 3}
   ArrowGFX: {fileID: 3937074314958344029}
@@ -710,7 +711,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1716793791
   m_SortingLayer: 6
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: a2ff15ba64e1b0b489f2771c70728a5f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

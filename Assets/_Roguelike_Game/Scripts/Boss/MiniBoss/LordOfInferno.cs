@@ -1,4 +1,5 @@
 using DG.Tweening;
+using Spine.Unity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,15 +10,7 @@ public class LordOfInferno : MonoBehaviour
 
     BossController bossController;
 
-    public float delayStarting;
-    public float delayAction;
-    public float delaySequence;
-
-    [Header("Moving")]
-    public bool shouldMove;
-    public Rigidbody2D theRB;
-    public float moveSpeed;
-    private Vector2 moveDirection;
+    //public SkeletonAnimation ske;
 
     [Header("Shooting")]
     public float xAngle;
@@ -42,17 +35,42 @@ public class LordOfInferno : MonoBehaviour
     private void Start()
     {
         bossController = GetComponent<BossController>();
-        StartCoroutine(Starting());
+        bossController.ske.AnimationState.Complete += AnimationState_Complete;
+        bossController.ske.AnimationState.SetAnimation(0, AnimationKeys.MN4_IDLE, false);
+    }
+
+    private void AnimationState_Complete(Spine.TrackEntry trackEntry)
+    {
+        switch (trackEntry.Animation.Name)
+        {
+            case AnimationKeys.MN4_IDLE:
+                bossController.ske.AnimationState.SetAnimation(0, AnimationKeys.MN4_SKILL_1_READY, false);
+                break;
+            case AnimationKeys.MN4_SKILL_1_READY:
+                shootFirst = true;
+                bossController.ske.AnimationState.SetAnimation(0, AnimationKeys.MN4_SKILL_1_ATTACK, false);
+                break;
+            case AnimationKeys.MN4_SKILL_1_ATTACK:
+                shootFirst = false;
+                bossController.ske.AnimationState.SetAnimation(0, AnimationKeys.MN4_SKILL_2_READY, false);
+                break;
+            case AnimationKeys.MN4_SKILL_2_READY:
+                shootSecond = true;
+                bossController.ske.AnimationState.SetAnimation(0, AnimationKeys.MN4_SKILL_2_ATTACK, false);
+                break;
+            case AnimationKeys.MN4_SKILL_2_ATTACK:
+                shootSecond = false;
+                bossController.ske.AnimationState.SetAnimation(0, AnimationKeys.MN4_IDLE, false);
+                break;
+            case AnimationKeys.MN4_DIE:
+                Destroy(gameObject);
+                break;
+        }
     }
 
     private void Update()
     {
         shootCounter -= Time.deltaTime;
-
-        if (shouldMove)
-        {
-            Moving();
-        }
 
         if (shootFirst)
         {
@@ -65,18 +83,6 @@ public class LordOfInferno : MonoBehaviour
         }
     }
 
-    public void Moving()
-    {
-        //handle movement
-        if (bossController.currentHealth > 0)
-        {
-            moveDirection = Vector2.zero;
-            moveDirection = PlayerController.Ins.transform.position - transform.position;
-            moveDirection.Normalize();
-            theRB.velocity = moveDirection * moveSpeed;
-        }
-    }
-
     public void ShootFirst()
     {
         if (shootCounter <= 0)
@@ -85,7 +91,7 @@ public class LordOfInferno : MonoBehaviour
 
             foreach (Transform t in shotPointsFirst)
             {
-                var newBullet = Instantiate(bulletFirst, t.position, t.rotation);
+                var newBullet = SmartPool.Ins.Spawn(bulletFirst, t.position, t.rotation);
                 newBullet.transform.Rotate(0f, 0f, Random.Range(-xAngle, yAngle));
             }
         }
@@ -99,58 +105,58 @@ public class LordOfInferno : MonoBehaviour
 
             foreach (Transform t in shotPointsSecond)
             {
-                Instantiate(bulletSecond, t.position, t.rotation);
+                SmartPool.Ins.Spawn(bulletSecond, t.position, t.rotation);
             }
         }
     }
 
-    //==================SETING ACTION==================//
-    public void ShootAction(int type)
-    {
-        // type == 0 => ban 5 vien dan || type == 1 => ban 3 vien dan
-        if (bossController.currentHealth > 0)
-        {
-            if (type == 0)
-            {
-                if (shootSt != null) StopCoroutine(shootSt);
-                shootSt = StartCoroutine(DelayShootFirst());
-            }
-            else if (type == 1)
-            {
-                if (shootNd != null) StopCoroutine(shootNd);
-                shootNd = StartCoroutine(DelayShootSecond());
-            }
-        }
-    }
+    ////==================SETING ACTION==================//
+    //public void ShootAction(int type)
+    //{
+    //    // type == 0 => ban 5 vien dan || type == 1 => ban 3 vien dan
+    //    if (bossController.currentHealth > 0)
+    //    {
+    //        if (type == 0)
+    //        {
+    //            if (shootSt != null) StopCoroutine(shootSt);
+    //            shootSt = StartCoroutine(DelayShootFirst());
+    //        }
+    //        else if (type == 1)
+    //        {
+    //            if (shootNd != null) StopCoroutine(shootNd);
+    //            shootNd = StartCoroutine(DelayShootSecond());
+    //        }
+    //    }
+    //}
 
-    IEnumerator Starting()
-    {
-        yield return new WaitForSeconds(delayStarting);
-        shootFirst = false;
-        ShootAction(0);
-    }
+    //IEnumerator Starting()
+    //{
+    //    yield return new WaitForSeconds(delayStarting);
+    //    shootFirst = false;
+    //    ShootAction(0);
+    //}
 
-    Coroutine shootSt;
-    IEnumerator DelayShootFirst()
-    {
-        shootFirst = true;
-        yield return new WaitForSeconds(delayAction);
-        shootFirst = false;
-        DOVirtual.DelayedCall(1, () =>
-        {
-            ShootAction(1);
-        });
-    }
+    //Coroutine shootSt;
+    //IEnumerator DelayShootFirst()
+    //{
+    //    shootFirst = true;
+    //    yield return new WaitForSeconds(delayAction);
+    //    shootFirst = false;
+    //    DOVirtual.DelayedCall(1, () =>
+    //    {
+    //        ShootAction(1);
+    //    });
+    //}
 
-    Coroutine shootNd;
-    IEnumerator DelayShootSecond()
-    {
-        shootSecond = true;
-        yield return new WaitForSeconds(delayAction);
-        shootSecond = false;
-        DOVirtual.DelayedCall(1, () =>
-        {
-            ShootAction(0);
-        });
-    }
+    //Coroutine shootNd;
+    //IEnumerator DelayShootSecond()
+    //{
+    //    shootSecond = true;
+    //    yield return new WaitForSeconds(delayAction);
+    //    shootSecond = false;
+    //    DOVirtual.DelayedCall(1, () =>
+    //    {
+    //        ShootAction(0);
+    //    });
+    //}
 }

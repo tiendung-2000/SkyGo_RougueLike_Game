@@ -1,3 +1,4 @@
+using API.UI;
 using DG.Tweening;
 using Spine.Unity;
 using System.Collections;
@@ -33,11 +34,11 @@ public class BossController : MonoBehaviour
         playerOnZone = false;
     }
 
-    //private void OnEnable()
-    //{
-    //    BossHubUI.Ins.bossHealthBar.maxValue = currentHealth;
-    //    BossHubUI.Ins.bossHealthBar.value = currentHealth;
-    //}
+    private void OnEnable()
+    {
+        UIController.instance.bossHealthBar.maxValue = currentHealth;
+        UIController.instance.bossHealthBar.value = currentHealth;
+    }
 
     public void TakeDamage(int damageAmount)
     {
@@ -45,15 +46,9 @@ public class BossController : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            //Sequence bossDeath = DOTween.Sequence();
-            //bossDeath.AppendCallback(() =>
-            //{
-            //    //SmartPool.Ins.Spawn(deathEffect, transform.position, transform.rotation);
-            //}).OnComplete(() =>
-            //{
-            //    Destroy(this.gameObject);
-            //});
+            ske.AnimationState.SetAnimation(0, AnimationKeys.DIE, false);
+            //CanvasManager.Ins.CloseUI(UIName.BossHubUI);
         }
-        //bossHubUI.bossHealthBar.value = currentHealth;
+        UIController.instance.bossHealthBar.value = currentHealth;
     }
 }
