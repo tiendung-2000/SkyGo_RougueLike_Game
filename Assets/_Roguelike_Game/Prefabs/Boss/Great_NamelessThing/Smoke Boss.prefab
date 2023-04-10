@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1698912026433280246}
   - component: {fileID: 1698912026433280247}
   - component: {fileID: 1698912026433280244}
-  - component: {fileID: 3575511056102212699}
   m_Layer: 0
   m_Name: Smoke Boss
   m_TagString: Untagged
@@ -4838,7 +4837,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1091551231
-  m_SortingLayer: 4
+  m_SortingLayer: 0
   m_SortingOrder: -1
   m_RenderMode: 0
   m_SortMode: 0
@@ -4865,18 +4864,6 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!114 &3575511056102212699
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1698912026433280245}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d47f70b8d61505148812c23d325e946d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1698912026726410788
 GameObject:
   m_ObjectHideFlags: 0

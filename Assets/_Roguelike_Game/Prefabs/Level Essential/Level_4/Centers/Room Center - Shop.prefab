@@ -182,8 +182,7 @@ SpriteRenderer:
   m_SortingLayerID: 1054729335
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 6407226241554960098, guid: 48d85d1ef51430e42b6aef57f02c863d,
-    type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -238,11 +237,13 @@ MonoBehaviour:
   isWeapon: 1
   itemCost: 5
   healthUpgradeAmount: 0
-  potentialGuns:
-  - {fileID: 65746618409861133, guid: 360f77b6a4323f241b780e5fff49642f, type: 3}
-  - {fileID: 6404797512079264749, guid: 4700574f90085ef49855b3169c2dca8e, type: 3}
-  - {fileID: 3398005107698965004, guid: 4e6d85d340262dd42b1517e37cf37891, type: 3}
-  gunSprite: {fileID: 220299621}
+  potentialWeapon:
+  - {fileID: 2081126821913419177, guid: c50308c6abc4d034b81b6541347a1765, type: 3}
+  - {fileID: 2081126821913419177, guid: b126057d2e8a3f24a9feaf22b255e50c, type: 3}
+  - {fileID: 2081126821913419177, guid: 1ed80fb497f23d743a04fadd1df3edf6, type: 3}
+  - {fileID: 2081126821913419177, guid: 171f6a76cb818b6478f6eaa4b88ff697, type: 3}
+  - {fileID: 2081126821913419177, guid: 85652e98ae2266a498052087829372f5, type: 3}
+  weaponSprite: {fileID: 220299621}
   inforText: {fileID: 1930383330}
 --- !u!1 &522320906
 GameObject:
@@ -650,8 +651,8 @@ MonoBehaviour:
   isWeapon: 0
   itemCost: 5
   healthUpgradeAmount: 0
-  potentialGuns: []
-  gunSprite: {fileID: 0}
+  potentialWeapon: []
+  weaponSprite: {fileID: 0}
   inforText: {fileID: 0}
 --- !u!1 &2830904208713076576
 GameObject:
@@ -1066,8 +1067,8 @@ MonoBehaviour:
   isWeapon: 0
   itemCost: 15
   healthUpgradeAmount: 2
-  potentialGuns: []
-  gunSprite: {fileID: 0}
+  potentialWeapon: []
+  weaponSprite: {fileID: 0}
   inforText: {fileID: 0}
 --- !u!1 &2830904209170737445
 GameObject:
@@ -3459,7 +3460,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openedWhenEnemiesCleared: 0
   enemies: []
+  enemyGroup: {fileID: 0}
+  isEnemyCenter: 0
   theRoom: {fileID: 0}
+  checkPoint: {fileID: 0}
+  maxX: 0
+  minX: 0
+  maxY: 0
+  minY: 0
 --- !u!1 &8397519340010711117
 GameObject:
   m_ObjectHideFlags: 0

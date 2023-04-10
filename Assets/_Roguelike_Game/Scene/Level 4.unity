@@ -531,7 +531,7 @@ PrefabInstance:
     - target: {fileID: 6390050823796474680, guid: ead34223b5836214daae27f7b79a988f,
         type: 3}
       propertyPath: nextLevel
-      value: Victory
+      value: Boss 4
       objectReference: {fileID: 0}
     - target: {fileID: 6390050823796474680, guid: ead34223b5836214daae27f7b79a988f,
         type: 3}

@@ -1298,7 +1298,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bde77d9c4977bdd43a6805483e79e962, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootPointParent: {fileID: 0}
+  shootPointParent: {fileID: 8477443136204837396}
   rotate: 1
 --- !u!114 &5279466344905361317
 MonoBehaviour:
@@ -1316,7 +1316,7 @@ MonoBehaviour:
   currentHealth: 500
   hitEffect: {fileID: 6314180217267293822, guid: 1cc409ca0e258db44978f7088646891b,
     type: 3}
-  playerOnZone: 0
+  levelExit: {fileID: 0}
 --- !u!114 &284117959321566620
 MonoBehaviour:
   m_ObjectHideFlags: 0

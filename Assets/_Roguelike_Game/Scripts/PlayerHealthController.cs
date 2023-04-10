@@ -20,8 +20,8 @@ public class PlayerHealthController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        maxHealth = CharacterTracker.instance.maxHealth;
-        currentHealth = CharacterTracker.instance.currentHealth;
+        maxHealth = CharacterTracker.Ins.maxHealth;
+        currentHealth = CharacterTracker.Ins.currentHealth;
 
         UIController.Ins.healthSlider.maxValue = maxHealth;
         UIController.Ins.healthSlider.value = currentHealth;
@@ -38,7 +38,6 @@ public class PlayerHealthController : MonoBehaviour
             if (invincCount <= 0)
             {
                 PlayerController.Ins.bodySR.color = new Color(PlayerController.Ins.bodySR.color.r, PlayerController.Ins.bodySR.color.g, PlayerController.Ins.bodySR.color.b, 1f);
-
             }
         }
     }
@@ -94,7 +93,6 @@ public class PlayerHealthController : MonoBehaviour
     {
         maxHealth += amount;
 
-        //currentHealth += amount;
         currentHealth = maxHealth;
 
         UIController.Ins.healthSlider.maxValue = maxHealth;

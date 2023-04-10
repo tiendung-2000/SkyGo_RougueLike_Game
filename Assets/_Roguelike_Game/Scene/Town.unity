@@ -2267,8 +2267,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf2c2a69667a9884593ee4dff8dcf356, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 9999
-  maxHealth: 9999
+  needDontDestroy: 1
+  currentHealth: 100
+  maxHealth: 100
   currentCoins: 0
 --- !u!4 &447048472
 Transform:
@@ -32953,14 +32954,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2099708220, guid: ead34223b5836214daae27f7b79a988f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 9.09
-      objectReference: {fileID: 0}
-    - target: {fileID: 2099708220, guid: ead34223b5836214daae27f7b79a988f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.01
-      objectReference: {fileID: 0}
     - target: {fileID: 6390050823796474680, guid: ead34223b5836214daae27f7b79a988f,
         type: 3}
       propertyPath: nextLevel
@@ -32979,12 +32972,12 @@ PrefabInstance:
     - target: {fileID: 6390050823796474685, guid: ead34223b5836214daae27f7b79a988f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.81
+      value: 5.58
       objectReference: {fileID: 0}
     - target: {fileID: 6390050823796474685, guid: ead34223b5836214daae27f7b79a988f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.79
+      value: -3.09
       objectReference: {fileID: 0}
     - target: {fileID: 6390050823796474685, guid: ead34223b5836214daae27f7b79a988f,
         type: 3}

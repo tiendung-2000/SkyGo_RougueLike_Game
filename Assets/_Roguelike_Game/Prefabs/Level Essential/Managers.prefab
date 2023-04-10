@@ -1687,7 +1687,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
-  maxHealth: 5
+  maxHealth: 0
   damageInvincLength: 1
 --- !u!114 &6390050823796474687
 MonoBehaviour:
@@ -1739,7 +1739,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waitToLoad: 2
-  nextLevel: Level 1
+  nextLevel: Boss 1
   isPaused: 0
   currentCoins: 0
   startPoint: {fileID: 2099708220}

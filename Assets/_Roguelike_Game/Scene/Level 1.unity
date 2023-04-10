@@ -408,7 +408,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2073078763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -421,8 +421,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf2c2a69667a9884593ee4dff8dcf356, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 9999
-  maxHealth: 9999
+  needDontDestroy: 0
+  currentHealth: 100
+  maxHealth: 100
   currentCoins: 0
 --- !u!4 &2073078764
 Transform:
@@ -445,16 +446,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6390050823796474680, guid: ead34223b5836214daae27f7b79a988f,
-        type: 3}
-      propertyPath: nextLevel
-      value: Boss 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6390050823796474680, guid: ead34223b5836214daae27f7b79a988f,
-        type: 3}
-      propertyPath: startPoint
-      value: 
-      objectReference: {fileID: 6390050823562338532}
     - target: {fileID: 6390050823796474681, guid: ead34223b5836214daae27f7b79a988f,
         type: 3}
       propertyPath: m_Name
@@ -517,12 +508,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ead34223b5836214daae27f7b79a988f, type: 3}
---- !u!4 &6390050823562338532 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2099708220, guid: ead34223b5836214daae27f7b79a988f,
-    type: 3}
-  m_PrefabInstance: {fileID: 6390050823562338531}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6840676943466547820
 Transform:
   m_ObjectHideFlags: 0
