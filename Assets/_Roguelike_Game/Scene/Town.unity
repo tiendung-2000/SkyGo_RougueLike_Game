@@ -28003,6 +28003,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelToLoad: Level 4
+  comeToBossLevel: 0
 --- !u!199 &4494503883198052948
 ParticleSystemRenderer:
   serializedVersion: 6
