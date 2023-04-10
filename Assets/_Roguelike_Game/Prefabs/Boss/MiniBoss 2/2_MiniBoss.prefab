@@ -106,7 +106,7 @@ MonoBehaviour:
   currentHealth: 500
   hitEffect: {fileID: 6314180217267293822, guid: 1cc409ca0e258db44978f7088646891b,
     type: 3}
-  playerOnZone: 0
+  levelExit: {fileID: 0}
 --- !u!114 &3481506743706018275
 MonoBehaviour:
   m_ObjectHideFlags: 0

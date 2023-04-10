@@ -16,7 +16,7 @@ TagManager:
   - Water
   - UI
   - Camera
-  - 
+  - BlockPlayerAndIgnoreBullet
   - Player
   - PlayerBullet
   - Enemies
