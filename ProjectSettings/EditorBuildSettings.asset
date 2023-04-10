@@ -6,6 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/_Roguelike_Game/Scene/Boss 6.unity
+    guid: 48caae549100ded409a879e73450fd81
+  - enabled: 1
+    path: Assets/_Roguelike_Game/Scene/Boss 5.unity
+    guid: 4fc9bd0cf66ccdd4aaf2622d26fec03e
+  - enabled: 1
+    path: Assets/_Roguelike_Game/Scene/Boss 4.unity
+    guid: 100504748ec4378488df757a67146d25
+  - enabled: 1
+    path: Assets/_Roguelike_Game/Scene/Boss 3.unity
+    guid: 2b4950f33f49dfc43bf3d7f0d2423588
+  - enabled: 1
     path: Assets/_Roguelike_Game/Scene/Boss 2.unity
     guid: aaed5517a0702bd44937f7c45f27ef9c
   - enabled: 1
@@ -30,9 +42,9 @@ EditorBuildSettings:
     path: Assets/_Roguelike_Game/Scene/Level 6.unity
     guid: 1ddd4d418ffc2b64aacea8aa62eed916
   - enabled: 1
-    path: Assets/_Roguelike_Game/Scene/Menu.unity
-    guid: c5af8fe57c57fc64db993daa3fd6da7d
-  - enabled: 1
     path: Assets/_Roguelike_Game/Scene/Town.unity
     guid: 65371d2240071294a822e4372be2fd20
+  - enabled: 1
+    path: Assets/_Roguelike_Game/Scene/Menu.unity
+    guid: c5af8fe57c57fc64db993daa3fd6da7d
   m_configObjects: {}

@@ -11450,6 +11450,11 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7944276779809746417, guid: 1d9c91d11185c4448a0eebd347c73998,
+        type: 3}
+      propertyPath: levelExit
+      value: 
+      objectReference: {fileID: 2068945101}
     - target: {fileID: 7944276779809746428, guid: 1d9c91d11185c4448a0eebd347c73998,
         type: 3}
       propertyPath: m_RootOrder
@@ -11819,6 +11824,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09514f14c977b0d488e3334400eeac97, type: 3}
+--- !u!1 &2068945101 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4742990836477015924, guid: 09514f14c977b0d488e3334400eeac97,
+    type: 3}
+  m_PrefabInstance: {fileID: 2068945100}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6390050823562338531
 PrefabInstance:
   m_ObjectHideFlags: 0

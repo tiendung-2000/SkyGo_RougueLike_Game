@@ -8227,6 +8227,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: 3_MiniBoss
       objectReference: {fileID: 0}
+    - target: {fileID: 1295974688720971836, guid: 992226e1d64e5d4449ee712fc426de5f,
+        type: 3}
+      propertyPath: levelExit
+      value: 
+      objectReference: {fileID: 2068945101}
     - target: {fileID: 2642548615432866957, guid: 992226e1d64e5d4449ee712fc426de5f,
         type: 3}
       propertyPath: m_Mesh
@@ -10921,6 +10926,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09514f14c977b0d488e3334400eeac97, type: 3}
+--- !u!1 &2068945101 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4742990836477015924, guid: 09514f14c977b0d488e3334400eeac97,
+    type: 3}
+  m_PrefabInstance: {fileID: 2068945100}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6390050823562338531
 PrefabInstance:
   m_ObjectHideFlags: 0

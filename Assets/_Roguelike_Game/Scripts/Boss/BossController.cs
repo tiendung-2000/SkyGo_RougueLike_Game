@@ -22,13 +22,13 @@ public class BossController : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
-    {
-        UIController.Ins.bossHub.SetActive(true);
-    }
+    //void ()
+    //{
+    //}
 
     private void OnEnable()
     {
+        UIController.Ins.bossHub.SetActive(true);
         UIController.Ins.bossHealthBar.maxValue = currentHealth;
         UIController.Ins.bossHealthBar.value = currentHealth;
     }

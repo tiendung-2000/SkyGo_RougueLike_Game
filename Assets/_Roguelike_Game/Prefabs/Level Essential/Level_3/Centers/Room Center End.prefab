@@ -2211,7 +2211,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openedWhenEnemiesCleared: 0
   enemies: []
+  enemyGroup: {fileID: 0}
+  isEnemyCenter: 0
   theRoom: {fileID: 0}
+  checkPoint: {fileID: 0}
+  maxX: 0
+  minX: 0
+  maxY: 0
+  minY: 0
 --- !u!1001 &6063699467603614451
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2219,6 +2226,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8121868983746098354}
     m_Modifications:
+    - target: {fileID: 4241869169237472828, guid: 09514f14c977b0d488e3334400eeac97,
+        type: 3}
+      propertyPath: comeToBossLevel
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4742990836477015924, guid: 09514f14c977b0d488e3334400eeac97,
         type: 3}
       propertyPath: m_Name

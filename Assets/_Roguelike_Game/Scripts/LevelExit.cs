@@ -7,26 +7,27 @@ public class LevelExit : MonoBehaviour
 {
     public string levelToLoad;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public bool comeToBossLevel;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag == "Player")
+        if (other.tag == "Player")
         {
             //SceneManager.LoadScene(levelToLoad);
 
             StartCoroutine(LevelManager.instance.LevelEnd());
 
+            if (comeToBossLevel)
+            {
+                StartCoroutine(IEShowBossHub());
+            }
+
         }
+    }
+
+    IEnumerator IEShowBossHub()
+    {
+        yield return new WaitForSeconds(2f);
+        UIController.Ins.bossHub.SetActive(true);
     }
 }

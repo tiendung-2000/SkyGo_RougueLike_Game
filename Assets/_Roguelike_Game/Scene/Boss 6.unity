@@ -9912,6 +9912,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 284117959321566620, guid: 85661b6d9b3edbb46a83e8055ef9178a,
+        type: 3}
+      propertyPath: fireRateFive
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 284117959321566620, guid: 85661b6d9b3edbb46a83e8055ef9178a,
+        type: 3}
+      propertyPath: fireRateFour
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 284117959321566620, guid: 85661b6d9b3edbb46a83e8055ef9178a,
+        type: 3}
+      propertyPath: fireRateFirst
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 284117959321566620, guid: 85661b6d9b3edbb46a83e8055ef9178a,
+        type: 3}
+      propertyPath: fireRateSecond
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3959006680508334442, guid: 85661b6d9b3edbb46a83e8055ef9178a,
         type: 3}
       propertyPath: m_Mesh
@@ -9922,6 +9942,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EliminatedBishop
       objectReference: {fileID: 0}
+    - target: {fileID: 5279466344905361317, guid: 85661b6d9b3edbb46a83e8055ef9178a,
+        type: 3}
+      propertyPath: levelExit
+      value: 
+      objectReference: {fileID: 2068945101}
     - target: {fileID: 5279466344905361319, guid: 85661b6d9b3edbb46a83e8055ef9178a,
         type: 3}
       propertyPath: m_RootOrder
@@ -10063,6 +10088,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09514f14c977b0d488e3334400eeac97, type: 3}
+--- !u!1 &2068945101 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4742990836477015924, guid: 09514f14c977b0d488e3334400eeac97,
+    type: 3}
+  m_PrefabInstance: {fileID: 2068945100}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6390050823562338531
 PrefabInstance:
   m_ObjectHideFlags: 0
