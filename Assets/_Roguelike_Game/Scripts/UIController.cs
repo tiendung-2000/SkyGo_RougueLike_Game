@@ -14,7 +14,6 @@ public class UIController : BaseUIMenu
     public TMP_Text healthText, cointText;
 
     public GameObject deathScreen;
-    public GameObject bossHub;
 
     public Image fadeScreen;
     public float fadeSpeed;
@@ -24,7 +23,7 @@ public class UIController : BaseUIMenu
 
     public GameObject pauseMenu, mapDisplay, bigMapText;
 
-    public Slider bossHealthBar;
+    
 
     private void Awake()
     {

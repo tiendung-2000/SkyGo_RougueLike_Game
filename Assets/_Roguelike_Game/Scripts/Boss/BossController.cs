@@ -1,4 +1,6 @@
+using API.UI;
 using Spine.Unity;
+using System.Collections;
 using UnityEngine;
 
 public class BossController : MonoBehaviour
@@ -8,6 +10,7 @@ public class BossController : MonoBehaviour
 
     [Header("Boss")]
     public float currentHealth;
+    
     public GameObject hitEffect;
     public GameObject levelExit;
 
@@ -28,9 +31,15 @@ public class BossController : MonoBehaviour
 
     private void OnEnable()
     {
-        UIController.Ins.bossHub.SetActive(true);
-        UIController.Ins.bossHealthBar.maxValue = currentHealth;
-        UIController.Ins.bossHealthBar.value = currentHealth;
+        //UIController.Ins.bossHub.SetActive(true);
+        StartCoroutine(IEGetBossData());
+    }
+
+    IEnumerator IEGetBossData()
+    {
+        yield return new WaitForSeconds(0.5f);
+        BossHubUI.Ins.bossHealthBar.maxValue = currentHealth;
+        BossHubUI.Ins.bossHealthBar.value = currentHealth;
     }
 
     public void TakeDamage(int damageAmount)
@@ -42,8 +51,8 @@ public class BossController : MonoBehaviour
             ske.AnimationState.SetAnimation(0, AnimationKeys.DIE, false);
 
             levelExit.SetActive(true);
-            UIController.Ins.bossHub.SetActive(false);
+            CanvasManager.Ins.CloseUI(UIName.BossHubUI);
         }
-        UIController.Ins.bossHealthBar.value = currentHealth;
+        BossHubUI.Ins.bossHealthBar.value = currentHealth;
     }
 }

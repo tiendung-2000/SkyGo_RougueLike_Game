@@ -1,3 +1,4 @@
+using API.UI;
 using UnityEngine;
 
 public class CheckPlayer : MonoBehaviour
@@ -6,7 +7,8 @@ public class CheckPlayer : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            //BossController.Ins.playerOnZone = true;
+            CanvasManager.Ins.OpenUI(UIName.BossHubUI, null);
+            gameObject.SetActive(false);
         }
     }
 }

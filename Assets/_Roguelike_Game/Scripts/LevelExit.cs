@@ -7,7 +7,7 @@ public class LevelExit : MonoBehaviour
 {
     public string levelToLoad;
 
-    public bool comeToBossLevel;
+    //public bool comeToBossLevel;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -17,17 +17,17 @@ public class LevelExit : MonoBehaviour
 
             StartCoroutine(LevelManager.instance.LevelEnd());
 
-            if (comeToBossLevel)
-            {
-                StartCoroutine(IEShowBossHub());
-            }
+            //if (comeToBossLevel)
+            //{
+            //    StartCoroutine(IEShowBossHub());
+            //}
 
         }
     }
 
-    IEnumerator IEShowBossHub()
-    {
-        yield return new WaitForSeconds(2f);
-        UIController.Ins.bossHub.SetActive(true);
-    }
+    //IEnumerator IEShowBossHub()
+    //{
+    //    yield return new WaitForSeconds(2f);
+    //    UIController.Ins.bossHub.SetActive(true);
+    //}
 }
