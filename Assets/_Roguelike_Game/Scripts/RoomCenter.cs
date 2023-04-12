@@ -53,6 +53,8 @@ public class RoomCenter : MonoBehaviour
                 {
                     enemies[i].gameObject.SetActive(true);
                 }
+
+                UIController.Ins.map.SetActive(false);
             }
         }
     }
@@ -80,6 +82,7 @@ public class RoomCenter : MonoBehaviour
             {
                 //new Enemy = 0 thi goi den ham OpenDoor trong class Room
                 theRoom.OpenDoors();
+                UIController.Ins.map.SetActive(true);
             }
         }
     }

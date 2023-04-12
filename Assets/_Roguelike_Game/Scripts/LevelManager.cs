@@ -12,10 +12,7 @@ public class LevelManager : MonoBehaviour
 
     public string nextLevel;
 
-
     public bool isPaused;
-
-    public int currentCoins;
 
     public Transform startPoint;
 
@@ -29,11 +26,8 @@ public class LevelManager : MonoBehaviour
         PlayerController.Ins.transform.position = startPoint.position;
         PlayerController.Ins.canMove = true;
 
-        currentCoins = CharacterTracker.Ins.currentCoins;
-
         Time.timeScale = 1f;
 
-        UIController.Ins.cointText.text = currentCoins.ToString();
     }
 
     // Update is called once per frame
@@ -55,7 +49,7 @@ public class LevelManager : MonoBehaviour
 
         yield return new WaitForSeconds(waitToLoad);
 
-        CharacterTracker.Ins.currentCoins = currentCoins;
+        //CharacterTracker.Ins.currentCoins = currentCoins;
         CharacterTracker.Ins.currentHealth = PlayerHealthController.Ins.currentHealth;
         CharacterTracker.Ins.maxHealth = PlayerHealthController.Ins.maxHealth;
 
@@ -73,7 +67,7 @@ public class LevelManager : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);
 
-        CharacterTracker.Ins.currentCoins = currentCoins;
+        //CharacterTracker.Ins.currentCoins = currentCoins;
         CharacterTracker.Ins.currentHealth = PlayerHealthController.Ins.currentHealth;
         CharacterTracker.Ins.maxHealth = PlayerHealthController.Ins.maxHealth;
 
@@ -102,20 +96,7 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    public void GetCoins(int amount)
-    {
-        currentCoins += amount;
-        UIController.Ins.cointText.text = currentCoins.ToString();
-    }
+    
 
-    public void SpendCoins(int amount)
-    {
-        currentCoins -= amount;
-
-        if (currentCoins < 0)
-        {
-            currentCoins = 0;
-        }
-        UIController.Ins.cointText.text = currentCoins.ToString();
-    }
+    
 }

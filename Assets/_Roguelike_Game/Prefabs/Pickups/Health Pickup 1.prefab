@@ -10,8 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7865251190439033113}
   - component: {fileID: 7865251190439033190}
+  - component: {fileID: -3127331261495931537}
   - component: {fileID: 7865251190439033115}
   - component: {fileID: 7865251190439033112}
+  - component: {fileID: 5216623885022435172}
   m_Layer: 14
   m_Name: Health Pickup 1
   m_TagString: Untagged
@@ -85,6 +87,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &-3127331261495931537
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7865251190439033191}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!114 &7865251190439033115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,7 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 639bb02b09406804ba19aea90210b3e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healAmount: 1
+  healAmount: 10
   waitToBeColleted: 0.5
 --- !u!61 &7865251190439033112
 BoxCollider2D:
@@ -125,3 +148,48 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.0697329}
   m_EdgeRadius: 0
+--- !u!114 &5216623885022435172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7865251190439033191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf7d3b10b6738004f86f22d477c125e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onGroundHitEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5216623885022435172}
+        m_TargetAssemblyTypeName: PickUpAnimation, Assembly-CSharp
+        m_MethodName: Bounce
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 1.55
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5216623885022435172}
+        m_TargetAssemblyTypeName: PickUpAnimation, Assembly-CSharp
+        m_MethodName: SlowDownVelocity
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 2
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  trnsObject: {fileID: 7865251190439033113}
+  trnsBody: {fileID: 7865251190439033113}
+  gravity: -20
+  groundVelocity: {x: 0, y: 0}
+  verticalVelocity: 0
+  isGrounded: 0

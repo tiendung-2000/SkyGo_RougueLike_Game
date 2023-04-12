@@ -26,7 +26,7 @@ public class CoinPickup : MonoBehaviour
     {
         if (other.tag == "Player" && waitToBeColleted <= 0)
         {
-            LevelManager.instance.GetCoins(coinValue);
+            CharacterTracker.Ins.GetCoins(coinValue);
 
             Destroy(gameObject);
 

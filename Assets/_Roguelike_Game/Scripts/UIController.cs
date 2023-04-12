@@ -10,6 +10,8 @@ public class UIController : BaseUIMenu
 {
     public static UIController Ins;
 
+    public GameObject map;
+
     public Slider healthSlider;
     public TMP_Text healthText, cointText;
 

@@ -7,7 +7,8 @@ public class EnemyController : MonoBehaviour
 {
     public Rigidbody2D theRB;
     public float moveSpeed;
-    //public SkeletonAnimation ske;
+    public SkeletonAnimation ske;
+    [SerializeField] float animationDuration;
 
     [Header("==========Chase Player==========")]
     public bool shouldChasePlayer;
@@ -157,7 +158,9 @@ public class EnemyController : MonoBehaviour
 
         if (health <= 0)
         {
-            Destroy(gameObject);
+            moveSpeed = 0f;
+            ske.AnimationState.SetAnimation(0, "Die", false);
+            StartCoroutine(IEDestroy());
 
             AudioManager.instance.PlaySFX(1);
 
@@ -179,5 +182,11 @@ public class EnemyController : MonoBehaviour
                 }
             }
         }
+    }
+
+    IEnumerator IEDestroy()
+    {
+        yield return new WaitForSeconds(1f);
+        Destroy(gameObject);
     }
 }

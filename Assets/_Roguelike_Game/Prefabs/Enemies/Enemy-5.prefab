@@ -50,7 +50,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theRB: {fileID: 6136148321352000324}
-  moveSpeed: 3
+  moveSpeed: 1.7
+  ske: {fileID: 628135115934771835}
+  animationDuration: 0.667
   shouldChasePlayer: 0
   rangerToChasePlayer: 7
   shouldRunAway: 0
@@ -63,7 +65,7 @@ MonoBehaviour:
   firePoint: {fileID: 6136148322531386575}
   fireRate: 1
   shootRange: 10
-  health: 150
+  health: 50
   deathSplatter:
   - {fileID: 4221103030953841034, guid: 55f84687650f7e94c8f3e979dc8f5c46, type: 3}
   - {fileID: 1660780676464692032, guid: 1035f997cf9b97c4f8a5f95a9f3e87c1, type: 3}

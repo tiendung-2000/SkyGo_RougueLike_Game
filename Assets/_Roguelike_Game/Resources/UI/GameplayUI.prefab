@@ -12824,6 +12824,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UILayer: 0
   UIID: 
+  map: {fileID: 878854926986960778}
   healthSlider: {fileID: 8858606189365210455}
   healthText: {fileID: 5077071928137403372}
   cointText: {fileID: 690706847954326830}

@@ -41,6 +41,8 @@ public class GhostFrigate : MonoBehaviour
         bossController = GetComponent<BossController>();
         bossController.ske.AnimationState.Complete += AnimationState_Complete;
         bossController.ske.AnimationState.SetAnimation(0, AnimationKeys.MN3_IDLE, false);
+
+        gameObject.transform.DOMoveX(-1f, 2f).SetLoops(-1,LoopType.Yoyo);
     }
 
     private void AnimationState_Complete(Spine.TrackEntry trackEntry)

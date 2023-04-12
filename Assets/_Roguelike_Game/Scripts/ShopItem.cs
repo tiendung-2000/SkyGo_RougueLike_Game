@@ -40,9 +40,9 @@ public class ShopItem : MonoBehaviour
         {
             if (Input.GetKeyUp(KeyCode.E))
             {
-                if (LevelManager.instance.currentCoins >= itemCost)
+                if (CharacterTracker.Ins.currentCoins >= itemCost)
                 {
-                    LevelManager.instance.SpendCoins(itemCost);
+                    CharacterTracker.Ins.SpendCoins(itemCost);
 
                     if (isHealthRestore)
                     {

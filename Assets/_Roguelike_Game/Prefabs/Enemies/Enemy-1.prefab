@@ -51,7 +51,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theRB: {fileID: 6550841243412457080}
-  moveSpeed: 3
+  moveSpeed: 1.7
+  ske: {fileID: 6560263372920033661}
+  animationDuration: 0.433
   shouldChasePlayer: 1
   rangerToChasePlayer: 7
   shouldRunAway: 0
@@ -64,7 +66,7 @@ MonoBehaviour:
   firePoint: {fileID: 6550841244381078003}
   fireRate: 1
   shootRange: 10
-  health: 150
+  health: 50
   deathSplatter:
   - {fileID: 4221103030953841034, guid: 55f84687650f7e94c8f3e979dc8f5c46, type: 3}
   - {fileID: 1660780676464692032, guid: 1035f997cf9b97c4f8a5f95a9f3e87c1, type: 3}
@@ -76,7 +78,7 @@ MonoBehaviour:
   itemToDrop:
   - {fileID: 2723754801257232795, guid: 0ec92ab51cd815e49bd576bf2c53695b, type: 3}
   - {fileID: 2723754801257232795, guid: 0ec92ab51cd815e49bd576bf2c53695b, type: 3}
-  itemDropPercent: 25
+  itemDropPercent: 70
 --- !u!61 &6550841243412457086
 BoxCollider2D:
   m_ObjectHideFlags: 0
