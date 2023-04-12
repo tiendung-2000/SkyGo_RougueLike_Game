@@ -1,3 +1,4 @@
+using API.UI;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -104,6 +105,11 @@ public class PlayerController : MonoBehaviour
 
                     AudioManager.instance.PlaySFX(8);
                 }
+            }
+
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                CanvasManager.Ins.OpenUI(UIName.WinUI, null);
             }
 
             if (dashCounter > 0)

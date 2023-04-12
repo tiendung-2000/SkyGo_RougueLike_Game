@@ -1,3 +1,4 @@
+using API.UI;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,27 +8,28 @@ public class LevelExit : MonoBehaviour
 {
     public string levelToLoad;
 
-    //public bool comeToBossLevel;
+    public bool mainGate;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
-            //SceneManager.LoadScene(levelToLoad);
-
-            StartCoroutine(LevelManager.instance.LevelEnd());
-
-            //if (comeToBossLevel)
-            //{
-            //    StartCoroutine(IEShowBossHub());
-            //}
-
+            PlayerController.Ins.canMove = false;
+            if (mainGate == true)
+            {
+                CanvasManager.Ins.OpenUI(UIName.LoadingUI, null);
+                SceneManager.LoadScene(levelToLoad);
+            }
+            else
+            {
+                StartCoroutine(IEShowWin());
+            }
         }
     }
 
-    //IEnumerator IEShowBossHub()
-    //{
-    //    yield return new WaitForSeconds(2f);
-    //    UIController.Ins.bossHub.SetActive(true);
-    //}
+    public IEnumerator IEShowWin()
+    {
+        yield return new WaitForSeconds(1f);
+        CanvasManager.Ins.OpenUI(UIName.WinUI, null);
+    }
 }

@@ -19,11 +19,9 @@ public class UIController : BaseUIMenu
     public float fadeSpeed;
     private bool fadeToBlack, fadeOutBlack;
 
-    public string newGameScene, mainMenuScene;
+    public string townScene;
 
     public GameObject pauseMenu, mapDisplay, bigMapText;
-
-    
 
     private void Awake()
     {
@@ -65,20 +63,22 @@ public class UIController : BaseUIMenu
         fadeOutBlack = false;
     }
 
-    public void NewGame()
+    //public void NewGame()
+    //{
+    //    Time.timeScale = 1f;
+
+    //    SceneManager.LoadScene(newGameScene);
+
+    //    Destroy(PlayerController.Ins.gameObject);
+    //}
+
+    public void ReturnToTown()
     {
         Time.timeScale = 1f;
 
-        SceneManager.LoadScene(newGameScene);
+        LevelManager.instance.PauseUnpause();
 
-        Destroy(PlayerController.Ins.gameObject);
-    }
-
-    public void ReturnToMainMenu()
-    {
-        Time.timeScale = 1f;
-
-        SceneManager.LoadScene(mainMenuScene);
+        SceneManager.LoadScene(townScene);
 
         Destroy(PlayerController.Ins.gameObject);
     }

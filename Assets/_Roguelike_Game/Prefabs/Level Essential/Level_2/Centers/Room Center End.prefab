@@ -2244,6 +2244,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4241869169237472828, guid: 09514f14c977b0d488e3334400eeac97,
         type: 3}
+      propertyPath: mainGate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4241869169237472828, guid: 09514f14c977b0d488e3334400eeac97,
+        type: 3}
       propertyPath: comeToBossLevel
       value: 1
       objectReference: {fileID: 0}

@@ -6,6 +6,9 @@ using UnityEngine;
 
 public class AppManager : Singleton<AppManager>
 {
+    public string townLevel;
+
+
     //[SerializeField] bool removeAds = false;
 
     //[SerializeField] bool hackCoin = false;

@@ -1,3 +1,4 @@
+using API.UI;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,7 @@ public class LevelManager : MonoBehaviour
     public float waitToLoad = 4f;
 
     public string nextLevel;
+
 
     public bool isPaused;
 
@@ -59,6 +61,27 @@ public class LevelManager : MonoBehaviour
 
         SceneManager.LoadScene(nextLevel);
 
+        CanvasManager.Ins.CloseUI(UIName.WinUI);
+
+    }
+
+    public IEnumerator LevelTown()
+    {
+        PlayerController.Ins.canMove = false;
+
+        UIController.Ins.StartFadeToBlack();
+
+        yield return new WaitForSeconds(0.5f);
+
+        CharacterTracker.Ins.currentCoins = currentCoins;
+        CharacterTracker.Ins.currentHealth = PlayerHealthController.Ins.currentHealth;
+        CharacterTracker.Ins.maxHealth = PlayerHealthController.Ins.maxHealth;
+
+        SceneManager.LoadScene(AppManager.Ins.townLevel);
+
+        Destroy(PlayerController.Ins.gameObject);
+
+        CanvasManager.Ins.CloseUI(UIName.WinUI);
     }
 
     public void PauseUnpause()

@@ -1350,7 +1350,7 @@ GameObject:
   - component: {fileID: 3024398953009449211}
   - component: {fileID: 3024398953009449210}
   m_Layer: 5
-  m_Name: Main Menu
+  m_Name: Home Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1460,7 +1460,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8858606187667447345}
         m_TargetAssemblyTypeName: UIController, Assembly-CSharp
-        m_MethodName: ReturnToMainMenu
+        m_MethodName: ReturnToTown
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3139,13 +3139,10 @@ MonoBehaviour:
   deathScreen: {fileID: 8858606189044714652}
   fadeScreen: {fileID: 8858606188658615555}
   fadeSpeed: 1
-  newGameScene: Town
-  mainMenuScene: Menu
+  townScene: Town
   pauseMenu: {fileID: 878854927357701609}
   mapDisplay: {fileID: 878854926986960778}
   bigMapText: {fileID: 1918205414131220405}
-  bossHub: {fileID: 0}
-  bossHealthBar: {fileID: 0}
 --- !u!1 &8858606188005659041
 GameObject:
   m_ObjectHideFlags: 0
