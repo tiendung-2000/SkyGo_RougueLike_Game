@@ -57,7 +57,7 @@ public class PlayerHealthController : MonoBehaviour
             {
                 PlayerController.Ins.gameObject.SetActive(false);
 
-                UIController.Ins.deathScreen.SetActive(true);
+                StartCoroutine(ShowLose());
 
                 AudioManager.instance.PlayGameOver();
 
@@ -67,6 +67,12 @@ public class PlayerHealthController : MonoBehaviour
             UIController.Ins.healthSlider.value = currentHealth;
             UIController.Ins.healthText.text = currentHealth.ToString() + " / " + maxHealth.ToString();
         }
+    }
+
+    IEnumerator ShowLose()
+    {
+        yield return new WaitForSeconds(1f);
+        UIController.Ins.deathScreen.SetActive(true);
     }
 
     public void MakeInvincible(float length)
