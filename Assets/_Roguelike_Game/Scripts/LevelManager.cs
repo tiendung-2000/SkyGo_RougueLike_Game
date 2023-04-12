@@ -50,12 +50,14 @@ public class LevelManager : MonoBehaviour
         yield return new WaitForSeconds(waitToLoad);
 
         //CharacterTracker.Ins.currentCoins = currentCoins;
-        CharacterTracker.Ins.currentHealth = PlayerHealthController.Ins.currentHealth;
-        CharacterTracker.Ins.maxHealth = PlayerHealthController.Ins.maxHealth;
+        CharacterTracker.Ins.currentHealthSave = PlayerHealthController.Ins.currentHealth;
+        CharacterTracker.Ins.maxHealthSave = PlayerHealthController.Ins.maxHealth;
 
         SceneManager.LoadScene(nextLevel);
 
         CanvasManager.Ins.CloseUI(UIName.WinUI);
+
+        //PlayerHealthController.Ins.ReHealth();
 
     }
 
@@ -68,10 +70,10 @@ public class LevelManager : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
 
         //CharacterTracker.Ins.currentCoins = currentCoins;
-        CharacterTracker.Ins.currentHealth = PlayerHealthController.Ins.currentHealth;
-        CharacterTracker.Ins.maxHealth = PlayerHealthController.Ins.maxHealth;
+        CharacterTracker.Ins.currentHealthSave = PlayerHealthController.Ins.currentHealth;
+        CharacterTracker.Ins.maxHealthSave = PlayerHealthController.Ins.maxHealth;
 
-        SceneManager.LoadScene(AppManager.Ins.townLevel);
+        SceneManager.LoadScene(CharacterTracker.Ins.townLevel);
 
         Destroy(PlayerController.Ins.gameObject);
 

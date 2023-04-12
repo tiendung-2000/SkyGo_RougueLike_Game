@@ -12,6 +12,8 @@ public class LoadingUI : BaseUIMenu
 
     Action OnLoaded;
 
+    Tween OnEnableTween;
+
     public override void Init(object[] initParams)
     {
         base.Init(initParams);
@@ -28,7 +30,8 @@ public class LoadingUI : BaseUIMenu
     public void LoadingRun()
     {
         progress.fillAmount = 0;
-        progress.DOFillAmount(1f, 4.5f).SetEase(Ease.Linear).OnComplete(() =>
+        OnEnableTween?.Kill();
+        OnEnableTween = progress.DOFillAmount(1f, 4.5f).SetEase(Ease.Linear).OnComplete(() =>
         {
             OnLoaded?.Invoke();
             OnLoaded = null;

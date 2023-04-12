@@ -57,6 +57,9 @@ public class UIController : BaseUIMenu
                 fadeToBlack = false;
             }
         }
+        healthSlider.value = PlayerHealthController.Ins.currentHealth;
+
+        healthText.text = PlayerHealthController.Ins.currentHealth.ToString() + " / " + PlayerHealthController.Ins.maxHealth.ToString();
     }
 
     public void StartFadeToBlack()

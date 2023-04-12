@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class CharacterTracker : Singleton<CharacterTracker>
 {
-    public int currentHealth, maxHealth, currentCoins;
-
+    public int currentHealthSave, maxHealthSave, currentCoins;
+    public string townLevel = "Town";
     private void Start()
     {
         UIController.Ins.cointText.text = currentCoins.ToString();

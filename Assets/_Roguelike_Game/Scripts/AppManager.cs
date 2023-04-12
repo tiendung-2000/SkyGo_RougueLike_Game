@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class AppManager : Singleton<AppManager>
 {
-    public string townLevel;
+    
 
     void Start()
     {

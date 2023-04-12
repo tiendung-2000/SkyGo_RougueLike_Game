@@ -2218,6 +2218,7 @@ GameObject:
   m_Component:
   - component: {fileID: 447048472}
   - component: {fileID: 447048471}
+  - component: {fileID: 447048473}
   m_Layer: 0
   m_Name: Tracker
   m_TagString: Untagged
@@ -2238,8 +2239,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   needDontDestroy: 1
-  currentHealth: 100
-  maxHealth: 100
+  currentHealthSave: 100
+  maxHealthSave: 100
   currentCoins: 0
 --- !u!4 &447048472
 Transform:
@@ -2255,6 +2256,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &447048473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 447048470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c64e7e39fae28c479fe4a7587d9aaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 100
+  maxHealth: 100
+  damageInvincLength: 0.5
 --- !u!1 &449977105
 GameObject:
   m_ObjectHideFlags: 0
@@ -33268,7 +33284,7 @@ PrefabInstance:
     - target: {fileID: 6390050823796474680, guid: ead34223b5836214daae27f7b79a988f,
         type: 3}
       propertyPath: nextLevel
-      value: Level 1
+      value: Boss 2
       objectReference: {fileID: 0}
     - target: {fileID: 6390050823796474681, guid: ead34223b5836214daae27f7b79a988f,
         type: 3}

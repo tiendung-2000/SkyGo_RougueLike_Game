@@ -1647,7 +1647,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6390050823796474685}
-  - component: {fileID: 6390050823796474686}
   - component: {fileID: 6390050823796474687}
   - component: {fileID: 6390050823796474680}
   m_Layer: 0
@@ -1674,21 +1673,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6390050823796474686
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6390050823796474681}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c64e7e39fae28c479fe4a7587d9aaa1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentHealth: 0
-  maxHealth: 0
-  damageInvincLength: 1
 --- !u!114 &6390050823796474687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1741,7 +1725,6 @@ MonoBehaviour:
   waitToLoad: 2
   nextLevel: Boss 1
   isPaused: 0
-  currentCoins: 0
   startPoint: {fileID: 2099708220}
 --- !u!1 &6390050823830213215
 GameObject:

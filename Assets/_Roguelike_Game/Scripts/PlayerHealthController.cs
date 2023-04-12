@@ -17,11 +17,11 @@ public class PlayerHealthController : MonoBehaviour
         Ins = this;
     }
 
-    // Start is called before the first frame update
-    void Start()
+    //Start is called before the first frame update
+    void OnEnable()
     {
-        maxHealth = CharacterTracker.Ins.maxHealth;
-        currentHealth = CharacterTracker.Ins.currentHealth;
+        maxHealth = CharacterTracker.Ins.maxHealthSave;
+        currentHealth = CharacterTracker.Ins.currentHealthSave;
 
         UIController.Ins.healthSlider.maxValue = maxHealth;
         UIController.Ins.healthSlider.value = currentHealth;
@@ -42,6 +42,21 @@ public class PlayerHealthController : MonoBehaviour
         }
     }
 
+    //private void OnEnable()
+    //{
+    //    ReHealth();
+    //}
+
+    //public void ReHealth()
+    //{
+    //    maxHealth = CharacterTracker.Ins.maxHealth;
+    //    currentHealth = CharacterTracker.Ins.currentHealth;
+
+    //    UIController.Ins.healthSlider.maxValue = maxHealth;
+    //    UIController.Ins.healthSlider.value = currentHealth;
+    //    UIController.Ins.healthText.text = currentHealth.ToString() + " / " + maxHealth.ToString();
+    //}
+
     public void DamagePlayer()
     {
         if (invincCount <= 0)
@@ -52,6 +67,7 @@ public class PlayerHealthController : MonoBehaviour
             invincCount = damageInvincLength;
 
             PlayerController.Ins.bodySR.color = new Color(PlayerController.Ins.bodySR.color.r, PlayerController.Ins.bodySR.color.g, PlayerController.Ins.bodySR.color.b, .5f);
+
 
             if (currentHealth <= 0)
             {
@@ -65,6 +81,7 @@ public class PlayerHealthController : MonoBehaviour
             }
 
             UIController.Ins.healthSlider.value = currentHealth;
+            Debug.Log(currentHealth);
             UIController.Ins.healthText.text = currentHealth.ToString() + " / " + maxHealth.ToString();
         }
     }
