@@ -74,9 +74,9 @@ public class GhostFrigate : MonoBehaviour
                 shootThird = false;
                 bossController.ske.AnimationState.SetAnimation(0, AnimationKeys.MN3_IDLE, false);
                 break;
-            case AnimationKeys.MN3_DIE:
-                Destroy(gameObject);
-                break;
+            //case AnimationKeys.MN3_DIE:
+            //    Destroy(gameObject);
+            //    break;
         }
     }
 

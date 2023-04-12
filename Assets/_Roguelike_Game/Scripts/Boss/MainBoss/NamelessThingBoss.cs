@@ -135,9 +135,9 @@ public class NamelessThingBoss : MonoBehaviour
                 });
                 break;
 
-            case AnimationKeys.B3_DIE:
-                Destroy(gameObject);
-                break;
+            //case AnimationKeys.B3_DIE:
+            //    Destroy(gameObject);
+            //    break;
         }
     }
 

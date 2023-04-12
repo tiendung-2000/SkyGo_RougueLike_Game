@@ -130,7 +130,7 @@ TrailRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -312610013
-  m_SortingLayer: 5
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Time: 0.13
   m_Parameters:
@@ -209,9 +209,7 @@ GameObject:
   - component: {fileID: 7786658623380145033}
   - component: {fileID: 7786658623380145032}
   - component: {fileID: 2030086332473498777}
-  - component: {fileID: 4364071207295842405}
   - component: {fileID: 7476814682716259159}
-  - component: {fileID: 444634352116800695}
   m_Layer: 11
   m_Name: MB_2_Bullet_2_1
   m_TagString: Untagged
@@ -274,7 +272,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -312610013
-  m_SortingLayer: 5
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 1f6f6bccaabeecb41ad18c27d6cc1029, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -303,22 +301,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.21875
---- !u!114 &4364071207295842405
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7786658623380145046}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2b535890aea5964a8dfdfad71ff265d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  point:
-  - {fileID: 1234019166000730261}
-  - {fileID: 5320699393624732922}
-  bullet: {fileID: 7786658623380145046, guid: 2433154117196714abfd441bbb51d5d1, type: 3}
 --- !u!114 &7476814682716259159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -332,18 +314,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 8
-  hasSpawn: 1
---- !u!114 &444634352116800695
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7786658623380145046}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3fb0158c4fc19b54a949e5b33ca611d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trail:
-  - {fileID: 5200552930021049654}
+  hasSpawn: 0

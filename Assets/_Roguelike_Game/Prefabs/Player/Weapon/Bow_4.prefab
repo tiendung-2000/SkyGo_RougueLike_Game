@@ -605,7 +605,7 @@ MonoBehaviour:
   weaponName: Phoenix Bow
   itemCost: 15
   weaponShopSprite: {fileID: 21300000, guid: 346ed9a2777d30a41ba28bb9c62a08c5, type: 3}
-  arrow: {fileID: 0}
+  arrow: {fileID: 1128771746439910431, guid: d1a95a539ad625f459d82e428d835aa9, type: 3}
   ArrowPrefab: {fileID: 1128771746439911396, guid: d1a95a539ad625f459d82e428d835aa9,
     type: 3}
   ArrowGFX: {fileID: 3937074314958344029}

@@ -129,9 +129,9 @@ public class TheDestroyerBoss : MonoBehaviour
                 shouldMove = true;
                 break;
 
-            case AnimationKeys.B1_DIE:
-                Destroy(gameObject);
-                break;
+            //case AnimationKeys.B1_DIE:
+            //    Destroy(gameObject);
+            //    break;
 
                 //default:
                 //    ske.AnimationState.SetAnimation(0, AnimationKeys.B1_MOVE, false);

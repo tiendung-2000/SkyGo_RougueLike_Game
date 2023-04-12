@@ -76,9 +76,9 @@ public class SteamPunkRhinoceros : MonoBehaviour
                 shouldMove = true;
                 bossController.ske.AnimationState.SetAnimation(0, AnimationKeys.MN1_MOVE, false);
                 break;
-            case AnimationKeys.MN1_DIE:
-                Destroy(gameObject);
-                break;
+            //case AnimationKeys.MN1_DIE:
+            //    Destroy(gameObject);
+            //    break;
         }
     }
 

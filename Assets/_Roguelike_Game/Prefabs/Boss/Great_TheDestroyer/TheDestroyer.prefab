@@ -891,7 +891,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bde77d9c4977bdd43a6805483e79e962, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootPointParent: {fileID: 5472462049780677391}
+  shootPointParent: {fileID: 5472462048323241528}
   rotate: 1
 --- !u!114 &5472462049780677378
 MonoBehaviour:
@@ -906,6 +906,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ske: {fileID: 5030806951854218695}
+  animationDuration: 1.167
   currentHealth: 500
   hitEffect: {fileID: 6314180217267293822, guid: 1cc409ca0e258db44978f7088646891b,
     type: 3}

@@ -62,9 +62,9 @@ public class LordOfInferno : MonoBehaviour
                 shootSecond = false;
                 bossController.ske.AnimationState.SetAnimation(0, AnimationKeys.MN4_IDLE, false);
                 break;
-            case AnimationKeys.MN4_DIE:
-                Destroy(gameObject);
-                break;
+            //case AnimationKeys.MN4_DIE:
+            //    Destroy(gameObject);
+            //    break;
         }
     }
 

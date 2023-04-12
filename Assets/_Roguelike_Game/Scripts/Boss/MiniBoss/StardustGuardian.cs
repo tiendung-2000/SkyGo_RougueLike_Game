@@ -59,9 +59,9 @@ public class StardustGuardian : MonoBehaviour
                 shootSecond = false;
                 bossController.ske.AnimationState.SetAnimation(0, AnimationKeys.MN5_IDLE, false);
                 break;
-            case AnimationKeys.MN5_DIE:
-                Destroy(gameObject);
-                break;
+            //case AnimationKeys.MN5_DIE:
+            //    Destroy(gameObject);
+            //    break;
         }
     }
 

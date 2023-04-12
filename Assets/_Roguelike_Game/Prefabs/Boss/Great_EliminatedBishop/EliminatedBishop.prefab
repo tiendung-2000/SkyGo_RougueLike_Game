@@ -1259,7 +1259,7 @@ Transform:
   m_GameObject: {fileID: 5279466344905361312}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.05, y: 6.83, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children:
   - {fileID: 1946948000265356291}
   m_Father: {fileID: 0}
@@ -1313,6 +1313,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ske: {fileID: 6281734026790201870}
+  animationDuration: 1.033
   currentHealth: 500
   hitEffect: {fileID: 6314180217267293822, guid: 1cc409ca0e258db44978f7088646891b,
     type: 3}
@@ -1370,10 +1371,10 @@ MonoBehaviour:
     type: 3}
   bulletFive: {fileID: 1491183898551324972, guid: b4220461bd579014e91ff3343e3c1809,
     type: 3}
-  fireRateFirst: 0.3
-  fireRateSecond: 0.3
-  fireRateFour: 0.3
-  fireRateFive: 0.4
+  fireRateFirst: 0.5
+  fireRateSecond: 0.5
+  fireRateFour: 0.5
+  fireRateFive: 0.5
   shootCounter: 0
   phaseFirst: 0
   phaseSecond: 0

@@ -107,9 +107,9 @@ public class EliminatedBishopBoss : MonoBehaviour
                 bossController.ske.AnimationState.SetAnimation(0, AnimationKeys.B1_MOVE, false);
                 break;
 
-            case AnimationKeys.B2_DIE:
-                Destroy(gameObject);
-                break;
+            //case AnimationKeys.B2_DIE:
+            //    Destroy(gameObject);
+            //    break;
         }
 
     }

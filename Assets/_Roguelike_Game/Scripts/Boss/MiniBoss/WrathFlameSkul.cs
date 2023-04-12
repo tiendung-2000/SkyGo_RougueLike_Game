@@ -71,9 +71,9 @@ public class WrathFlameSkul : MonoBehaviour
                 shouldMove = true;
                 bossController.ske.AnimationState.SetAnimation(0, AnimationKeys.MN2_MOVE, false);
                 break;
-            case AnimationKeys.MN2_DIE:
-                Destroy(gameObject);
-                break;
+            //case AnimationKeys.MN2_DIE:
+            //    Destroy(gameObject);
+            //    break;
         }
     }
 

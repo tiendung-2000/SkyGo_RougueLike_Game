@@ -9759,8 +9759,7 @@ GameObject:
   - component: {fileID: 7786658623380145033}
   - component: {fileID: 7786658623380145032}
   - component: {fileID: -1398678182918524896}
-  - component: {fileID: 4512855141626958718}
-  - component: {fileID: -3399766050912055800}
+  - component: {fileID: 4393832408104650481}
   m_Layer: 11
   m_Name: MB_3_Bullet 1
   m_TagString: Untagged
@@ -9860,7 +9859,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.875, y: 0.875}
   m_EdgeRadius: 0
---- !u!114 &4512855141626958718
+--- !u!114 &4393832408104650481
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9869,20 +9868,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 7786658623380145046}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c0bd3e2b4ff02a449fdde732d7821e9, type: 3}
+  m_Script: {fileID: 11500000, guid: b2edb19fc7f703c4b9b50554cb9dc59a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-3399766050912055800
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7786658623380145046}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d368d1485315874babcd883e6e93c83, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 12
-  explodeEffect: {fileID: 141556, guid: bc7bb88f27a042e4c836b68091ab7411, type: 3}
+  speed: 8
+  hasSpawn: 0

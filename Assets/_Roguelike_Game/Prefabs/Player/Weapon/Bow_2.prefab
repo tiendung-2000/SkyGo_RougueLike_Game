@@ -605,7 +605,7 @@ MonoBehaviour:
   weaponName: Iron Bow
   itemCost: 15
   weaponShopSprite: {fileID: 21300000, guid: 50af9f7423992ac47a6563970497d4b3, type: 3}
-  arrow: {fileID: 0}
+  arrow: {fileID: 1128771746439910431, guid: c1e94bee498597c4ebd092ac21f1689c, type: 3}
   ArrowPrefab: {fileID: 1128771746439911396, guid: c1e94bee498597c4ebd092ac21f1689c,
     type: 3}
   ArrowGFX: {fileID: 3937074314958344029}

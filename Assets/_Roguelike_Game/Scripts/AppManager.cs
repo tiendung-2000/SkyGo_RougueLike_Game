@@ -8,12 +8,6 @@ public class AppManager : Singleton<AppManager>
 {
     public string townLevel;
 
-
-    //[SerializeField] bool removeAds = false;
-
-    //[SerializeField] bool hackCoin = false;
-
-    // Start is called before the first frame update
     void Start()
     {
         Action onLoaded = () =>

@@ -605,7 +605,7 @@ MonoBehaviour:
   weaponName: Queen Of Elf Bow
   itemCost: 15
   weaponShopSprite: {fileID: 21300000, guid: 2a221c0447cb383499fa9ab7cdbc0d3b, type: 3}
-  arrow: {fileID: 0}
+  arrow: {fileID: 1128771746439910431, guid: cf892d9748e8bef4a839676da68afb11, type: 3}
   ArrowPrefab: {fileID: 1128771746439911396, guid: cf892d9748e8bef4a839676da68afb11,
     type: 3}
   ArrowGFX: {fileID: 3937074314958344029}

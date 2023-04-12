@@ -9982,26 +9982,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 284117959321566620, guid: 85661b6d9b3edbb46a83e8055ef9178a,
-        type: 3}
-      propertyPath: fireRateFive
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 284117959321566620, guid: 85661b6d9b3edbb46a83e8055ef9178a,
-        type: 3}
-      propertyPath: fireRateFour
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 284117959321566620, guid: 85661b6d9b3edbb46a83e8055ef9178a,
-        type: 3}
-      propertyPath: fireRateFirst
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 284117959321566620, guid: 85661b6d9b3edbb46a83e8055ef9178a,
-        type: 3}
-      propertyPath: fireRateSecond
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 3959006680508334442, guid: 85661b6d9b3edbb46a83e8055ef9178a,
         type: 3}
       propertyPath: m_Mesh
@@ -10021,16 +10001,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5279466344905361319, guid: 85661b6d9b3edbb46a83e8055ef9178a,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 5279466344905361319, guid: 85661b6d9b3edbb46a83e8055ef9178a,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 5279466344905361319, guid: 85661b6d9b3edbb46a83e8055ef9178a,
         type: 3}
@@ -10179,7 +10149,7 @@ PrefabInstance:
     - target: {fileID: 6390050823796474680, guid: ead34223b5836214daae27f7b79a988f,
         type: 3}
       propertyPath: nextLevel
-      value: Victory
+      value: Town
       objectReference: {fileID: 0}
     - target: {fileID: 6390050823796474680, guid: ead34223b5836214daae27f7b79a988f,
         type: 3}

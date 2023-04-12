@@ -8,6 +8,8 @@ public class BossController : MonoBehaviour
     public static BossController Ins;
     public SkeletonAnimation ske;
 
+    public float animationDuration;
+
     [Header("Boss")]
     public float currentHealth;
     
@@ -50,9 +52,17 @@ public class BossController : MonoBehaviour
         {
             ske.AnimationState.SetAnimation(0, AnimationKeys.DIE, false);
 
-            levelExit.SetActive(true);
+            StartCoroutine(DisableBossHub());
             CanvasManager.Ins.CloseUI(UIName.BossHubUI);
+
         }
         BossHubUI.Ins.bossHealthBar.value = currentHealth;
+    }
+
+    IEnumerator DisableBossHub()
+    {
+        yield return new WaitForSeconds(animationDuration);
+        Destroy(gameObject);
+        levelExit.SetActive(true);
     }
 }

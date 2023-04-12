@@ -40,10 +40,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1491183898551324979}
   - component: {fileID: 1491183898551324978}
-  - component: {fileID: 3314064223341952243}
   - component: {fileID: 1943038453338670007}
   - component: {fileID: 3015135406357148047}
-  - component: {fileID: 2447512899585156530}
   m_Layer: 11
   m_Name: MainB_2_Bullet_4_1
   m_TagString: Untagged
@@ -120,27 +118,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &3314064223341952243
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1491183898551324972}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!58 &1943038453338670007
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -170,24 +147,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  hasSpawn: 1
---- !u!114 &2447512899585156530
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1491183898551324972}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2b535890aea5964a8dfdfad71ff265d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  point:
-  - {fileID: 3561535875027056778}
-  - {fileID: 6681928335829784373}
-  - {fileID: 3291188516159793827}
-  bullet: {fileID: 6540557728516063716, guid: 81a554789c8642644a47864ccbe62f58, type: 3}
 --- !u!1 &2433186489827007488
 GameObject:
   m_ObjectHideFlags: 0

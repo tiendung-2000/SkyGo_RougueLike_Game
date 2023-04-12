@@ -70,7 +70,7 @@ TrailRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -312610013
-  m_SortingLayer: 5
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Time: 0.12
   m_Parameters:
@@ -148,9 +148,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7786658623380145033}
   - component: {fileID: 7786658623380145032}
-  - component: {fileID: 7786658623380145047}
   - component: {fileID: -1398678182918524896}
-  - component: {fileID: 261414605848666934}
+  - component: {fileID: 7786658623380145047}
   m_Layer: 11
   m_Name: MB_2_Bullet_1
   m_TagString: Untagged
@@ -211,7 +210,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -312610013
-  m_SortingLayer: 5
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: db80ba9da51e63c46a6f43c0a3a9cfcd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -224,20 +223,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7786658623380145047
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7786658623380145046}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2edb19fc7f703c4b9b50554cb9dc59a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 8
-  hasSpawn: 0
 --- !u!61 &-1398678182918524896
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -264,7 +249,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.875, y: 0.875}
   m_EdgeRadius: 0
---- !u!114 &261414605848666934
+--- !u!114 &7786658623380145047
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -273,8 +258,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7786658623380145046}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3fb0158c4fc19b54a949e5b33ca611d4, type: 3}
+  m_Script: {fileID: 11500000, guid: b2edb19fc7f703c4b9b50554cb9dc59a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trail:
-  - {fileID: 2825826219874459850}
+  speed: 8

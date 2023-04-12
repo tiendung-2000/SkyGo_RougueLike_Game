@@ -605,7 +605,7 @@ MonoBehaviour:
   weaponName: Fire Bow
   itemCost: 15
   weaponShopSprite: {fileID: 21300000, guid: bae88e49aaf2ff246b20ec42b3844440, type: 3}
-  arrow: {fileID: 0}
+  arrow: {fileID: 1128771746439910431, guid: 1a82ea58564954d4690235033fe34dc8, type: 3}
   ArrowPrefab: {fileID: 1128771746439911396, guid: 1a82ea58564954d4690235033fe34dc8,
     type: 3}
   ArrowGFX: {fileID: 3937074314958344029}
