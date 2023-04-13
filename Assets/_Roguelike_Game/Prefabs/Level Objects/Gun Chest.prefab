@@ -338,7 +338,7 @@ MonoBehaviour:
     type: 3}
   notification: {fileID: 2464433734971461157}
   spawnPoint: {fileID: 2464433734527195329}
-  scaleSpeed: 0
+  scaleSpeed: 0.5
 --- !u!61 &2464433735744878724
 BoxCollider2D:
   m_ObjectHideFlags: 0

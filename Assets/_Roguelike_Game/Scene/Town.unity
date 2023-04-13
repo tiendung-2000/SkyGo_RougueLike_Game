@@ -2242,6 +2242,7 @@ MonoBehaviour:
   currentHealthSave: 100
   maxHealthSave: 100
   currentCoins: 0
+  townLevel: Town
 --- !u!4 &447048472
 Transform:
   m_ObjectHideFlags: 0
@@ -28328,7 +28329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2ff6a67edd430744817c90305449c66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelToLoad: Level 1
+  levelToLoad: Level 2
   mainGate: 1
 --- !u!199 &4494503883198052948
 ParticleSystemRenderer:

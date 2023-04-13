@@ -177,8 +177,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  trnsObject: {fileID: 0}
-  trnsBody: {fileID: 0}
+  trnsObject: {fileID: 1560822681252234984}
+  trnsBody: {fileID: 1560822681252234984}
   gravity: -20
   groundVelocity: {x: 0, y: 0}
   verticalVelocity: 0
