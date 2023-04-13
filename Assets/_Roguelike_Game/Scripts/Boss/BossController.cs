@@ -10,6 +10,8 @@ public class BossController : MonoBehaviour
 
     public float animationDuration;
 
+    public int curDamage = 1;
+
     [Header("Boss")]
     public float currentHealth;
     

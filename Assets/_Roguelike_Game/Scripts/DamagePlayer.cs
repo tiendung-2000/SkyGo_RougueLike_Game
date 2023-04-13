@@ -4,23 +4,13 @@ using UnityEngine;
 
 public class DamagePlayer : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+    public int damage = 1;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.tag == "Player")
         {
-            PlayerHealthController.Ins.DamagePlayer();
+            PlayerHealthController.Ins.DamagePlayer(damage);
         }
     }
 
@@ -28,7 +18,7 @@ public class DamagePlayer : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            PlayerHealthController.Ins.DamagePlayer();
+            PlayerHealthController.Ins.DamagePlayer(damage);
         }
     }
 
@@ -36,7 +26,7 @@ public class DamagePlayer : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            PlayerHealthController.Ins.DamagePlayer();
+            PlayerHealthController.Ins.DamagePlayer(damage);
         }
     }
 
@@ -44,7 +34,7 @@ public class DamagePlayer : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            PlayerHealthController.Ins.DamagePlayer();
+            PlayerHealthController.Ins.DamagePlayer(damage);
         }
     }
 }

@@ -907,6 +907,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ske: {fileID: 5030806951854218695}
   animationDuration: 1.167
+  curDamage: 1
   currentHealth: 500
   hitEffect: {fileID: 6314180217267293822, guid: 1cc409ca0e258db44978f7088646891b,
     type: 3}

@@ -1,3 +1,4 @@
+using API.UI;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -57,12 +58,14 @@ public class PlayerHealthController : MonoBehaviour
     //    UIController.Ins.healthText.text = currentHealth.ToString() + " / " + maxHealth.ToString();
     //}
 
-    public void DamagePlayer()
+    public void DamagePlayer(int damage)
     {
         if (invincCount <= 0)
         {
             AudioManager.instance.PlaySFX(11);
-            currentHealth--;
+
+            //so mau tru
+            currentHealth -= damage;
 
             invincCount = damageInvincLength;
 
@@ -89,7 +92,7 @@ public class PlayerHealthController : MonoBehaviour
     IEnumerator ShowLose()
     {
         yield return new WaitForSeconds(1f);
-        UIController.Ins.deathScreen.SetActive(true);
+        CanvasManager.Ins.OpenUI(UIName.LoseUI, null);
     }
 
     public void MakeInvincible(float length)

@@ -2220,7 +2220,7 @@ GameObject:
   - component: {fileID: 447048471}
   - component: {fileID: 447048473}
   m_Layer: 0
-  m_Name: Tracker
+  m_Name: TrackerAndHealth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2239,8 +2239,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   needDontDestroy: 1
-  currentHealthSave: 100
-  maxHealthSave: 100
+  currentHealthSave: 10
+  maxHealthSave: 10
   currentCoins: 0
   townLevel: Town
 --- !u!4 &447048472
@@ -2269,8 +2269,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c64e7e39fae28c479fe4a7587d9aaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 100
-  maxHealth: 100
+  currentHealth: 10
+  maxHealth: 10
   damageInvincLength: 0.5
 --- !u!1 &449977105
 GameObject:
@@ -28329,7 +28329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2ff6a67edd430744817c90305449c66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelToLoad: Level 2
+  levelToLoad: Level 1
   mainGate: 1
 --- !u!199 &4494503883198052948
 ParticleSystemRenderer:

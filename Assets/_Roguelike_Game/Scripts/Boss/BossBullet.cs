@@ -20,7 +20,7 @@ public class BossBullet : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            PlayerHealthController.Ins.DamagePlayer();
+            PlayerHealthController.Ins.DamagePlayer(BossController.Ins.curDamage);
         }
 
         SmartPool.Ins.Despawn(gameObject);

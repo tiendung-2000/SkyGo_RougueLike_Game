@@ -15,13 +15,10 @@ public class UIController : BaseUIMenu
     public Slider healthSlider;
     public TMP_Text healthText, cointText;
 
-    public GameObject deathScreen;
-
     public Image fadeScreen;
     public float fadeSpeed;
     private bool fadeToBlack, fadeOutBlack;
 
-    public string townScene;
 
     public GameObject pauseMenu, mapDisplay, bigMapText;
 
@@ -77,16 +74,7 @@ public class UIController : BaseUIMenu
     //    Destroy(PlayerController.Ins.gameObject);
     //}
 
-    public void ReturnToTown()
-    {
-        Time.timeScale = 1f;
-
-        LevelManager.instance.PauseUnpause();
-
-        SceneManager.LoadScene(townScene);
-
-        Destroy(PlayerController.Ins.gameObject);
-    }
+    
 
     public void Resume()
     {
