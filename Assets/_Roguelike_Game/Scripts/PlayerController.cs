@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
             moveInput.x = Input.GetAxisRaw("Horizontal");
             moveInput.y = Input.GetAxisRaw("Vertical");
 
-            moveInput.Normalize();
+            //moveInput.Normalize();
 
 
             theRB.velocity = moveInput * activeMoveSpeed;
