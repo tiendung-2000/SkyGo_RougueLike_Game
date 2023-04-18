@@ -103,7 +103,7 @@ public class PlayerController : MonoBehaviour
                     anim.SetTrigger("dash");
                     PlayerHealthController.Ins.MakeInvincible(dashInvincibisity);
 
-                    AudioController.instance.PlaySFX(8);
+                    AudioManager.instance.PlaySFX(8);
                 }
             }
 

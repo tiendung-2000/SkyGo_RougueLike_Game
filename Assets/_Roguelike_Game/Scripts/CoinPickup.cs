@@ -30,7 +30,7 @@ public class CoinPickup : MonoBehaviour
 
             Destroy(gameObject);
 
-            AudioController.instance.PlaySFX(5);
+            AudioManager.instance.PlaySFX(5);
         }
     }
 }

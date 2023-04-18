@@ -24,7 +24,7 @@ public class PlayerBullet : MonoBehaviour
     {
         Instantiate(impactEffect, transform.position, transform.rotation);
         Destroy(gameObject);
-        AudioController.instance.PlaySFX(4);
+        AudioManager.instance.PlaySFX(4);
 
         if (other.tag == "Enemy")
         {

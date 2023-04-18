@@ -62,7 +62,7 @@ public class PlayerHealthController : MonoBehaviour
     {
         if (invincCount <= 0)
         {
-            AudioController.instance.PlaySFX(11);
+            AudioManager.instance.PlaySFX(11);
 
             //so mau tru
             currentHealth -= damage;
@@ -78,9 +78,9 @@ public class PlayerHealthController : MonoBehaviour
 
                 StartCoroutine(ShowLose());
 
-                AudioController.instance.PlayGameOver();
+                AudioManager.instance.PlayGameOver();
 
-                AudioController.instance.PlaySFX(9);
+                AudioManager.instance.PlaySFX(9);
             }
 
             UIController.Ins.healthSlider.value = currentHealth;

@@ -98,7 +98,7 @@ public class Weapon : MonoBehaviour
             {
                 Instantiate(ArrowPrefab, firePoint.position, firePoint.rotation);
                 shotCounter = timeBetweenShots;
-                AudioController.instance.PlaySFX(12);
+                AudioManager.instance.PlaySFX(12);
 
                 CanFire = false;
                 ArrowGFX.enabled = false;

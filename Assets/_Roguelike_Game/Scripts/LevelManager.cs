@@ -41,7 +41,7 @@ public class LevelManager : MonoBehaviour
 
     public IEnumerator LevelEnd()
     {
-        AudioController.instance.PlayerLevelWin();
+        AudioManager.instance.PlayerLevelWin();
 
         PlayerController.Ins.canMove = false;
 
