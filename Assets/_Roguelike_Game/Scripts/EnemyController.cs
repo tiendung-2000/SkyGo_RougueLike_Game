@@ -121,7 +121,7 @@ public class EnemyController : MonoBehaviour
                 {
                     fireCounter = fireRate;
                     Instantiate(bullet, firePoint.position, firePoint.rotation);
-                    AudioManager.instance.PlaySFX(13);
+                    AudioController.instance.PlaySFX(13);
                 }
             }
         }
@@ -152,7 +152,7 @@ public class EnemyController : MonoBehaviour
     {
         health -= damage;
 
-        AudioManager.instance.PlaySFX(2);
+        AudioController.instance.PlaySFX(2);
 
         Instantiate(hitEffect, transform.position, transform.rotation);
 
@@ -162,7 +162,7 @@ public class EnemyController : MonoBehaviour
             ske.AnimationState.SetAnimation(0, "Die", false);
             StartCoroutine(IEDestroy());
 
-            AudioManager.instance.PlaySFX(1);
+            AudioController.instance.PlaySFX(1);
 
             int selectedSplatter = Random.Range(0, deathSplatter.Length);
 

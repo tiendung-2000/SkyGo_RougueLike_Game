@@ -71,11 +71,11 @@ public class ShopItem : MonoBehaviour
                     gameObject.SetActive(false);
                     inBuyZone = false;
 
-                    AudioManager.instance.PlaySFX(18);
+                    AudioController.instance.PlaySFX(18);
                 }
                 else
                 {
-                    AudioManager.instance.PlaySFX(19);
+                    AudioController.instance.PlaySFX(19);
                 }
             }
         }
