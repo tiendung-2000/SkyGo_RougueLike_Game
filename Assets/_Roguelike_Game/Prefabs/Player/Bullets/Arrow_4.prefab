@@ -257,7 +257,7 @@ MonoBehaviour:
   theRB: {fileID: 1128771746439910425}
   impactEffect: {fileID: 353501945080834316, guid: b9d1f3168e43ffe46a44181d2bd4f69f,
     type: 3}
-  damageToGive: 30
+  damageToGive: 50
 --- !u!1 &4873251598321973744
 GameObject:
   m_ObjectHideFlags: 0
