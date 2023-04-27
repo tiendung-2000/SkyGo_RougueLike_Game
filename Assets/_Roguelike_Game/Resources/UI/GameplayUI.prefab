@@ -105,7 +105,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &878854927357701608
 RectTransform:
   m_ObjectHideFlags: 0
@@ -755,7 +755,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Resume
+  m_text: Exit Game
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d70f485aa27dc43f79a8fd168f58435c, type: 2}
   m_sharedMaterial: {fileID: 5416806443266638455, guid: d70f485aa27dc43f79a8fd168f58435c,
@@ -838,7 +838,7 @@ GameObject:
   - component: {fileID: 3024398951973337620}
   - component: {fileID: 3024398951973337621}
   m_Layer: 5
-  m_Name: Resume Button
+  m_Name: Quit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -948,7 +948,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8858606187667447345}
         m_TargetAssemblyTypeName: UIController, Assembly-CSharp
-        m_MethodName: Resume
+        m_MethodName: Quit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2198,10 +2198,8 @@ MonoBehaviour:
   healthSlider: {fileID: 8858606189365210455}
   healthText: {fileID: 5077071928137403372}
   cointText: {fileID: 690706847954326830}
-  deathScreen: {fileID: 0}
   fadeScreen: {fileID: 8858606188658615555}
   fadeSpeed: 1
-  townScene: Town
   pauseMenu: {fileID: 878854927357701609}
   mapDisplay: {fileID: 878854926986960778}
   bigMapText: {fileID: 1918205414131220405}

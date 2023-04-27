@@ -76,8 +76,8 @@ public class UIController : BaseUIMenu
 
     
 
-    public void Resume()
+    public void Quit()
     {
-        LevelManager.instance.PauseUnpause();
+        Application.Quit();
     }
 }
